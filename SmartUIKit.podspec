@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                    = 'SmartUIKit'
-    s.version                 = '1.0.0'
+    s.version                 = '1.0.1'
     s.summary                 = 'For ease in use of UIKit'
     s.homepage                = 'https://github.com/ranvirp/SmartUIKit-Pod/'
 
