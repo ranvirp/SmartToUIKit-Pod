@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.source                  = { :git => 'https://github.com/ranvirp/SmartUIKit-Pod.git',:tag=>s.version }
     #s.source = {:path => './SketchToUIKitFramework.zip'}
     s.ios.deployment_target   = '13.0'
-    s.ios.vendored_frameworks = 'SmartUIKitFramework.zip'
+    s.ios.vendored_frameworks = 'SmartUIKit.xcframework'
     s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
