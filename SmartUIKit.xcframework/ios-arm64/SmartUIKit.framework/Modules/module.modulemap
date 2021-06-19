@@ -1,0 +1,4 @@
+framework module SmartUIKit {
+  header "SmartUIKit-Swift.h"
+  requires objc
+}

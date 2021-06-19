@@ -1,0 +1,3524 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SmartUIKit
+import CoreData
+import CoreGraphics
+import CoreImage
+import Foundation
+import Kingfisher
+import ObjectiveC
+import QuartzCore
+import SQLite
+import SnapKit
+import Swift
+import UIKit
+@objc open class STableViewDelegate : ObjectiveC.NSObject, UIKit.UITableViewDelegate {
+  public init(didSelectRow: ((UIKit.UITableView?, Foundation.IndexPath) -> ())?, heightForRow: ((UIKit.UITableView?, Foundation.IndexPath) -> (CoreGraphics.CGFloat))?, headerViews: ((UIKit.UITableView, Swift.Int) -> (UIKit.UIView?))? = nil, footerViews: ((UIKit.UITableView, Swift.Int) -> (UIKit.UIView?))? = nil, accessoryBtnHandler: ((UIKit.UITableView, Foundation.IndexPath) -> ())? = nil)
+  @objc public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+  @objc public func tableView(_ tableView: UIKit.UITableView, viewForHeaderInSection section: Swift.Int) -> UIKit.UIView?
+  @objc public func tableView(_ tableView: UIKit.UITableView, viewForFooterInSection section: Swift.Int) -> UIKit.UIView?
+  @objc public func tableView(_ tableView: UIKit.UITableView, willDisplayHeaderView view: UIKit.UIView, forSection section: Swift.Int)
+  @objc public func tableView(_ tableView: UIKit.UITableView, willDisplayFooterView view: UIKit.UIView, forSection section: Swift.Int)
+  @objc public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @objc public func tableView(_ tableView: UIKit.UITableView, heightForHeaderInSection section: Swift.Int) -> CoreGraphics.CGFloat
+  @objc public func tableView(_ tableView: UIKit.UITableView, heightForFooterInSection section: Swift.Int) -> CoreGraphics.CGFloat
+  @objc public func tableView(_ tableView: UIKit.UITableView, accessoryButtonTappedForRowWith indexPath: Foundation.IndexPath)
+  @objc public func tableView(_ tableView: UIKit.UITableView, shouldHighlightRowAt: Foundation.IndexPath) -> Swift.Bool
+  @objc public func tableView(_ tableView: UIKit.UITableView, didHighlightRowAt: Foundation.IndexPath)
+  @objc public func tableView(_ tableView: UIKit.UITableView, didUnhighlightRowAt: Foundation.IndexPath)
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension UITextField {
+  public func addDoneButtonOnKeyboard()
+}
+@objc @_inheritsConvenienceInitializers open class SAnimator : ObjectiveC.NSObject, QuartzCore.CAAnimationDelegate {
+  public static let shared: SmartUIKit.SAnimator
+  public func addAnimationContainer(_ container: SmartUIKit.AnimationContainer, superView: UIKit.UIView)
+  public func groupAnimation(_ group: [SmartUIKit.AnimationContainer], superView: UIKit.UIView, completion: (() -> ())?)
+  public func chainAnimation(_ chain: [SmartUIKit.AnimationContainer], superView: UIKit.UIView, completion: (() -> ())?, duration: Foundation.TimeInterval = 1.0)
+  public func infiniteAnimation(ac: SmartUIKit.AnimationContainer, superView: UIKit.UIView)
+  @objc deinit
+  @objc override dynamic public init()
+}
+public var viewStore: [Swift.String : [UIKit.UIView]]
+@objc @_inheritsConvenienceInitializers open class SUIViewController : UIKit.UIViewController {
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc open class SPageViewControllerDataSource : ObjectiveC.NSObject, UIKit.UIPageViewControllerDataSource {
+  public init(viewControllers: [UIKit.UIViewController])
+  @objc public func pageViewController(_ pageViewController: UIKit.UIPageViewController, viewControllerBefore viewController: UIKit.UIViewController) -> UIKit.UIViewController?
+  @objc public func pageViewController(_ pageViewController: UIKit.UIPageViewController, viewControllerAfter viewController: UIKit.UIViewController) -> UIKit.UIViewController?
+  @objc public func presentationCount(for pageViewController: UIKit.UIPageViewController) -> Swift.Int
+  @objc public func presentationIndex(for pageViewController: UIKit.UIPageViewController) -> Swift.Int
+  @objc deinit
+  @objc override dynamic public init()
+}
+public enum Emoji : Swift.String, Swift.CaseIterable, Swift.Codable {
+  case pound_symbol
+  case hash
+  case keycap_asterisk
+  case digit_zero
+  case zero
+  case digit_one
+  case one
+  case digit_two
+  case two
+  case digit_three
+  case three
+  case digit_four
+  case four
+  case digit_five
+  case five
+  case digit_six
+  case six
+  case digit_seven
+  case seven
+  case digit_eight
+  case eight
+  case digit_nine
+  case nine
+  case copyright
+  case registered
+  case bangbang
+  case interrobang
+  case tm
+  case information_source
+  case left_right_arrow
+  case arrow_up_down
+  case arrow_upper_left
+  case arrow_upper_right
+  case arrow_lower_right
+  case arrow_lower_left
+  case leftwards_arrow_with_hook
+  case arrow_right_hook
+  case watch
+  case hourglass
+  case keyboard
+  case eject
+  case fast_forward
+  case rewind
+  case arrow_double_up
+  case arrow_double_down
+  case track_next
+  case track_previous
+  case play_pause
+  case alarm_clock
+  case stopwatch
+  case timer
+  case hourglass_flowing_sand
+  case pause_button
+  case stop_button
+  case record_button
+  case m
+  case black_small_square
+  case white_small_square
+  case arrow_forward
+  case arrow_backward
+  case white_medium_square
+  case black_medium_square
+  case white_medium_small_square
+  case black_medium_small_square
+  case sunny
+  case cloud
+  case umbrella2
+  case snowman2
+  case comet
+  case telephone
+  case ballot_box_with_check
+  case umbrella
+  case coffee
+  case shamrock
+  case point_up
+  case point_up_tone1
+  case point_up_tone2
+  case point_up_tone3
+  case point_up_tone4
+  case point_up_tone5
+  case skull_crossbones
+  case radioactive
+  case biohazard
+  case orthodox_cross
+  case star_and_crescent
+  case peace
+  case yin_yang
+  case wheel_of_dharma
+  case frowning2
+  case relaxed
+  case female_sign
+  case male_sign
+  case aries
+  case taurus
+  case gemini
+  case cancer
+  case leo
+  case virgo
+  case libra
+  case scorpius
+  case sagittarius
+  case capricorn
+  case aquarius
+  case pisces
+  case chess_pawn
+  case spades
+  case clubs
+  case hearts
+  case diamonds
+  case hotsprings
+  case recycle
+  case infinity
+  case wheelchair
+  case hammer_pick
+  case anchor
+  case crossed_swords
+  case medical_symbol
+  case scales
+  case alembic
+  case gear
+  case atom
+  case fleur_de_lis
+  case warning
+  case zap
+  case white_circle
+  case black_circle
+  case coffin
+  case urn
+  case soccer
+  case baseball
+  case snowman
+  case partly_sunny
+  case thunder_cloud_rain
+  case ophiuchus
+  case pick
+  case helmet_with_cross
+  case chains
+  case no_entry
+  case shinto_shrine
+  case church
+  case mountain
+  case beach_umbrella
+  case fountain
+  case golf
+  case ferry
+  case sailboat
+  case skier
+  case ice_skate
+  case person_bouncing_ball
+  case woman_bouncing_ball
+  case man_bouncing_ball
+  case person_bouncing_ball_tone1
+  case woman_bouncing_ball_tone1
+  case man_bouncing_ball_tone1
+  case person_bouncing_ball_tone2
+  case woman_bouncing_ball_tone2
+  case man_bouncing_ball_tone2
+  case person_bouncing_ball_tone3
+  case woman_bouncing_ball_tone3
+  case man_bouncing_ball_tone3
+  case person_bouncing_ball_tone4
+  case woman_bouncing_ball_tone4
+  case man_bouncing_ball_tone4
+  case person_bouncing_ball_tone5
+  case woman_bouncing_ball_tone5
+  case man_bouncing_ball_tone5
+  case tent
+  case fuelpump
+  case scissors
+  case white_check_mark
+  case airplane
+  case envelope
+  case fist
+  case fist_tone1
+  case fist_tone2
+  case fist_tone3
+  case fist_tone4
+  case fist_tone5
+  case raised_hand
+  case raised_hand_tone1
+  case raised_hand_tone2
+  case raised_hand_tone3
+  case raised_hand_tone4
+  case raised_hand_tone5
+  case v
+  case v_tone1
+  case v_tone2
+  case v_tone3
+  case v_tone4
+  case v_tone5
+  case writing_hand
+  case writing_hand_tone1
+  case writing_hand_tone2
+  case writing_hand_tone3
+  case writing_hand_tone4
+  case writing_hand_tone5
+  case pencil2
+  case black_nib
+  case heavy_check_mark
+  case heavy_multiplication_x
+  case cross
+  case star_of_david
+  case sparkles
+  case eight_spoked_asterisk
+  case eight_pointed_black_star
+  case snowflake
+  case sparkle
+  case x
+  case negative_squared_cross_mark
+  case question
+  case grey_question
+  case grey_exclamation
+  case exclamation
+  case heart_exclamation
+  case heart
+  case heavy_plus_sign
+  case heavy_minus_sign
+  case heavy_division_sign
+  case arrow_right
+  case curly_loop
+  case loop
+  case arrow_heading_up
+  case arrow_heading_down
+  case arrow_left
+  case arrow_up
+  case arrow_down
+  case black_large_square
+  case white_large_square
+  case star
+  case o
+  case wavy_dash
+  case part_alternation_mark
+  case congratulations
+  case secret
+  case mahjong
+  case black_joker
+  case a
+  case b
+  case o2
+  case parking
+  case ab
+  case cl
+  case cool
+  case free
+  case id
+  case new
+  case ng
+  case ok
+  case sos
+  case up
+  case vs
+  case flag_ac
+  case flag_ad
+  case flag_ae
+  case flag_af
+  case flag_ag
+  case flag_ai
+  case flag_al
+  case flag_am
+  case flag_ao
+  case flag_aq
+  case flag_ar
+  case flag_as
+  case flag_at
+  case flag_au
+  case flag_aw
+  case flag_ax
+  case flag_az
+  case flag_ba
+  case flag_bb
+  case flag_bd
+  case flag_be
+  case flag_bf
+  case flag_bg
+  case flag_bh
+  case flag_bi
+  case flag_bj
+  case flag_bl
+  case flag_bm
+  case flag_bn
+  case flag_bo
+  case flag_bq
+  case flag_br
+  case flag_bs
+  case flag_bt
+  case flag_bv
+  case flag_bw
+  case flag_by
+  case flag_bz
+  case flag_ca
+  case flag_cc
+  case flag_cd
+  case flag_cf
+  case flag_cg
+  case flag_ch
+  case flag_ci
+  case flag_ck
+  case flag_cl
+  case flag_cm
+  case flag_cn
+  case flag_co
+  case flag_cp
+  case flag_cr
+  case flag_cu
+  case flag_cv
+  case flag_cw
+  case flag_cx
+  case flag_cy
+  case flag_cz
+  case flag_de
+  case flag_dg
+  case flag_dj
+  case flag_dk
+  case flag_dm
+  case flag_do
+  case flag_dz
+  case flag_ea
+  case flag_ec
+  case flag_ee
+  case flag_eg
+  case flag_eh
+  case flag_er
+  case flag_es
+  case flag_et
+  case flag_eu
+  case flag_fi
+  case flag_fj
+  case flag_fk
+  case flag_fm
+  case flag_fo
+  case flag_fr
+  case flag_ga
+  case flag_gb
+  case flag_gd
+  case flag_ge
+  case flag_gf
+  case flag_gg
+  case flag_gh
+  case flag_gi
+  case flag_gl
+  case flag_gm
+  case flag_gn
+  case flag_gp
+  case flag_gq
+  case flag_gr
+  case flag_gs
+  case flag_gt
+  case flag_gu
+  case flag_gw
+  case flag_gy
+  case flag_hk
+  case flag_hm
+  case flag_hn
+  case flag_hr
+  case flag_ht
+  case flag_hu
+  case flag_ic
+  case flag_id
+  case flag_ie
+  case flag_il
+  case flag_im
+  case flag_in
+  case flag_io
+  case flag_iq
+  case flag_ir
+  case flag_is
+  case flag_it
+  case flag_je
+  case flag_jm
+  case flag_jo
+  case flag_jp
+  case flag_ke
+  case flag_kg
+  case flag_kh
+  case flag_ki
+  case flag_km
+  case flag_kn
+  case flag_kp
+  case flag_kr
+  case flag_kw
+  case flag_ky
+  case flag_kz
+  case flag_la
+  case flag_lb
+  case flag_lc
+  case flag_li
+  case flag_lk
+  case flag_lr
+  case flag_ls
+  case flag_lt
+  case flag_lu
+  case flag_lv
+  case flag_ly
+  case flag_ma
+  case flag_mc
+  case flag_md
+  case flag_me
+  case flag_mf
+  case flag_mg
+  case flag_mh
+  case flag_mk
+  case flag_ml
+  case flag_mm
+  case flag_mn
+  case flag_mo
+  case flag_mp
+  case flag_mq
+  case flag_mr
+  case flag_ms
+  case flag_mt
+  case flag_mu
+  case flag_mv
+  case flag_mw
+  case flag_mx
+  case flag_my
+  case flag_mz
+  case flag_na
+  case flag_nc
+  case flag_ne
+  case flag_nf
+  case flag_ng
+  case flag_ni
+  case flag_nl
+  case flag_no
+  case flag_np
+  case flag_nr
+  case flag_nu
+  case flag_nz
+  case flag_om
+  case flag_pa
+  case flag_pe
+  case flag_pf
+  case flag_pg
+  case flag_ph
+  case flag_pk
+  case flag_pl
+  case flag_pm
+  case flag_pn
+  case flag_pr
+  case flag_ps
+  case flag_pt
+  case flag_pw
+  case flag_py
+  case flag_qa
+  case flag_re
+  case flag_ro
+  case flag_rs
+  case flag_ru
+  case flag_rw
+  case flag_sa
+  case flag_sb
+  case flag_sc
+  case flag_sd
+  case flag_se
+  case flag_sg
+  case flag_sh
+  case flag_si
+  case flag_sj
+  case flag_sk
+  case flag_sl
+  case flag_sm
+  case flag_sn
+  case flag_so
+  case flag_sr
+  case flag_ss
+  case flag_st
+  case flag_sv
+  case flag_sx
+  case flag_sy
+  case flag_sz
+  case flag_ta
+  case flag_tc
+  case flag_td
+  case flag_tf
+  case flag_tg
+  case flag_th
+  case flag_tj
+  case flag_tk
+  case flag_tl
+  case flag_tm
+  case flag_tn
+  case flag_to
+  case flag_tr
+  case flag_tt
+  case flag_tv
+  case flag_tw
+  case flag_tz
+  case flag_ua
+  case flag_ug
+  case flag_um
+  case united_nations
+  case flag_us
+  case flag_uy
+  case flag_uz
+  case flag_va
+  case flag_vc
+  case flag_ve
+  case flag_vg
+  case flag_vi
+  case flag_vn
+  case flag_vu
+  case flag_wf
+  case flag_ws
+  case flag_xk
+  case flag_ye
+  case flag_yt
+  case flag_za
+  case flag_zm
+  case flag_zw
+  case koko
+  case sa
+  case u7121
+  case u6307
+  case u7981
+  case u7a7a
+  case u5408
+  case u6e80
+  case u6709
+  case u6708
+  case u7533
+  case u5272
+  case u55b6
+  case ideograph_advantage
+  case accept
+  case cyclone
+  case foggy
+  case closed_umbrella
+  case night_with_stars
+  case sunrise_over_mountains
+  case sunrise
+  case city_dusk
+  case city_sunset
+  case rainbow
+  case bridge_at_night
+  case ocean
+  case volcano
+  case milky_way
+  case earth_africa
+  case earth_americas
+  case earth_asia
+  case globe_with_meridians
+  case new_moon
+  case waxing_crescent_moon
+  case first_quarter_moon
+  case waxing_gibbous_moon
+  case full_moon
+  case waning_gibbous_moon
+  case last_quarter_moon
+  case waning_crescent_moon
+  case crescent_moon
+  case new_moon_with_face
+  case first_quarter_moon_with_face
+  case last_quarter_moon_with_face
+  case full_moon_with_face
+  case sun_with_face
+  case star2
+  case stars
+  case thermometer
+  case white_sun_small_cloud
+  case white_sun_cloud
+  case white_sun_rain_cloud
+  case cloud_rain
+  case cloud_snow
+  case cloud_lightning
+  case cloud_tornado
+  case fog
+  case wind_blowing_face
+  case hotdog
+  case taco
+  case burrito
+  case chestnut
+  case seedling
+  case evergreen_tree
+  case deciduous_tree
+  case palm_tree
+  case cactus
+  case hot_pepper
+  case tulip
+  case cherry_blossom
+  case rose
+  case hibiscus
+  case sunflower
+  case blossom
+  case corn
+  case ear_of_rice
+  case herb
+  case four_leaf_clover
+  case maple_leaf
+  case fallen_leaf
+  case leaves
+  case mushroom
+  case tomato
+  case eggplant
+  case grapes
+  case melon
+  case watermelon
+  case tangerine
+  case lemon
+  case banana
+  case pineapple
+  case apple
+  case green_apple
+  case pear
+  case peach
+  case cherries
+  case strawberry
+  case hamburger
+  case pizza
+  case meat_on_bone
+  case poultry_leg
+  case rice_cracker
+  case rice_ball
+  case rice
+  case curry
+  case ramen
+  case spaghetti
+  case bread
+  case fries
+  case sweet_potato
+  case dango
+  case oden
+  case sushi
+  case fried_shrimp
+  case fish_cake
+  case icecream
+  case shaved_ice
+  case ice_cream
+  case doughnut
+  case cookie
+  case chocolate_bar
+  case candy
+  case lollipop
+  case custard
+  case honey_pot
+  case cake
+  case bento
+  case stew
+  case cooking
+  case fork_and_knife
+  case tea
+  case sake
+  case wine_glass
+  case cocktail
+  case tropical_drink
+  case beer
+  case beers
+  case baby_bottle
+  case fork_knife_plate
+  case champagne
+  case popcorn
+  case ribbon
+  case gift
+  case birthday
+  case jack_o_lantern
+  case christmas_tree
+  case santa
+  case santa_tone1
+  case santa_tone2
+  case santa_tone3
+  case santa_tone4
+  case santa_tone5
+  case fireworks
+  case sparkler
+  case balloon
+  case tada
+  case confetti_ball
+  case tanabata_tree
+  case crossed_flags
+  case bamboo
+  case dolls
+  case flags
+  case wind_chime
+  case rice_scene
+  case school_satchel
+  case mortar_board
+  case military_medal
+  case reminder_ribbon
+  case microphone2
+  case level_slider
+  case control_knobs
+  case film_frames
+  case tickets
+  case carousel_horse
+  case ferris_wheel
+  case roller_coaster
+  case fishing_pole_and_fish
+  case microphone
+  case movie_camera
+  case cinema
+  case headphones
+  case art
+  case tophat
+  case circus_tent
+  case ticket
+  case clapper
+  case performing_arts
+  case video_game
+  case dart
+  case slot_machine
+  case height_ball
+  case game_die
+  case bowling
+  case flower_playing_cards
+  case musical_note
+  case notes
+  case saxophone
+  case guitar
+  case musical_keyboard
+  case trumpet
+  case violin
+  case musical_score
+  case running_shirt_with_sash
+  case tennis
+  case ski
+  case basketball
+  case checkered_flag
+  case snowboarder
+  case snowboarder_tone1
+  case snowboarder_tone2
+  case snowboarder_tone3
+  case snowboarder_tone4
+  case snowboarder_tone5
+  case person_running
+  case woman_running
+  case man_running
+  case person_running_tone1
+  case woman_running_tone1
+  case man_running_tone1
+  case person_running_tone2
+  case woman_running_tone2
+  case man_running_tone2
+  case person_running_tone3
+  case woman_running_tone3
+  case man_running_tone3
+  case person_running_tone4
+  case woman_running_tone4
+  case man_running_tone4
+  case person_running_tone5
+  case woman_running_tone5
+  case man_running_tone5
+  case person_surfing
+  case woman_surfing
+  case man_surfing
+  case person_surfing_tone1
+  case woman_surfing_tone1
+  case man_surfing_tone1
+  case person_surfing_tone2
+  case woman_surfing_tone2
+  case man_surfing_tone2
+  case person_surfing_tone3
+  case woman_surfing_tone3
+  case man_surfing_tone3
+  case person_surfing_tone4
+  case woman_surfing_tone4
+  case man_surfing_tone4
+  case person_surfing_tone5
+  case woman_surfing_tone5
+  case man_surfing_tone5
+  case medal
+  case trophy
+  case horse_racing
+  case horse_racing_tone1
+  case horse_racing_tone2
+  case horse_racing_tone3
+  case horse_racing_tone4
+  case horse_racing_tone5
+  case football
+  case rugby_football
+  case person_swimming
+  case woman_swimming
+  case man_swimming
+  case person_swimming_tone1
+  case woman_swimming_tone1
+  case man_swimming_tone1
+  case person_swimming_tone2
+  case woman_swimming_tone2
+  case man_swimming_tone2
+  case person_swimming_tone3
+  case woman_swimming_tone3
+  case man_swimming_tone3
+  case person_swimming_tone4
+  case woman_swimming_tone4
+  case man_swimming_tone4
+  case person_swimming_tone5
+  case woman_swimming_tone5
+  case man_swimming_tone5
+  case person_lifting_weights
+  case woman_lifting_weights
+  case man_lifting_weights
+  case person_lifting_weights_tone1
+  case woman_lifting_weights_tone1
+  case man_lifting_weights_tone1
+  case person_lifting_weights_tone2
+  case woman_lifting_weights_tone2
+  case man_lifting_weights_tone2
+  case person_lifting_weights_tone3
+  case woman_lifting_weights_tone3
+  case man_lifting_weights_tone3
+  case person_lifting_weights_tone4
+  case woman_lifting_weights_tone4
+  case man_lifting_weights_tone4
+  case person_lifting_weights_tone5
+  case woman_lifting_weights_tone5
+  case man_lifting_weights_tone5
+  case person_golfing
+  case woman_golfing
+  case man_golfing
+  case person_golfing_tone1
+  case woman_golfing_tone1
+  case man_golfing_tone1
+  case person_golfing_tone2
+  case woman_golfing_tone2
+  case man_golfing_tone2
+  case person_golfing_tone3
+  case woman_golfing_tone3
+  case man_golfing_tone3
+  case person_golfing_tone4
+  case woman_golfing_tone4
+  case man_golfing_tone4
+  case person_golfing_tone5
+  case woman_golfing_tone5
+  case man_golfing_tone5
+  case motorcycle
+  case race_car
+  case cricket_game
+  case volleyball
+  case field_hockey
+  case hockey
+  case ping_pong
+  case mountain_snow
+  case camping
+  case beach
+  case construction_site
+  case homes
+  case cityscape
+  case house_abandoned
+  case classical_building
+  case desert
+  case island
+  case park
+  case stadium
+  case house
+  case house_with_garden
+  case office
+  case post_office
+  case european_post_office
+  case hospital
+  case bank
+  case atm
+  case hotel
+  case love_hotel
+  case convenience_store
+  case school
+  case department_store
+  case factory
+  case izakaya_lantern
+  case japanese_castle
+  case european_castle
+  case flag_white
+  case rainbow_flag
+  case flag_black
+  case pirate_flag
+  case england
+  case scotland
+  case wales
+  case rosette
+  case label
+  case badminton
+  case bow_and_arrow
+  case amphora
+  case tone1
+  case tone2
+  case tone3
+  case tone4
+  case tone5
+  case rat
+  case mouse2
+  case ox
+  case water_buffalo
+  case cow2
+  case tiger2
+  case leopard
+  case rabbit2
+  case cat2
+  case dragon
+  case crocodile
+  case whale2
+  case snail
+  case snake
+  case racehorse
+  case ram
+  case goat
+  case sheep
+  case monkey
+  case rooster
+  case chicken
+  case dog2
+  case pig2
+  case boar
+  case elephant
+  case octopus
+  case shell
+  case bug
+  case ant
+  case bee
+  case beetle
+  case fish
+  case tropical_fish
+  case blowfish
+  case turtle
+  case hatching_chick
+  case baby_chick
+  case hatched_chick
+  case bird
+  case penguin
+  case koala
+  case poodle
+  case dromedary_camel
+  case camel
+  case dolphin
+  case mouse
+  case cow
+  case tiger
+  case rabbit
+  case cat
+  case dragon_face
+  case whale
+  case horse
+  case monkey_face
+  case dog
+  case pig
+  case frog
+  case hamster
+  case wolf
+  case bear
+  case panda_face
+  case pig_nose
+  case feet
+  case chipmunk
+  case eyes
+  case eye
+  case eye_in_speech_bubble
+  case ear
+  case ear_tone1
+  case ear_tone2
+  case ear_tone3
+  case ear_tone4
+  case ear_tone5
+  case nose
+  case nose_tone1
+  case nose_tone2
+  case nose_tone3
+  case nose_tone4
+  case nose_tone5
+  case lips
+  case tongue
+  case point_up_2
+  case point_up_2_tone1
+  case point_up_2_tone2
+  case point_up_2_tone3
+  case point_up_2_tone4
+  case point_up_2_tone5
+  case point_down
+  case point_down_tone1
+  case point_down_tone2
+  case point_down_tone3
+  case point_down_tone4
+  case point_down_tone5
+  case point_left
+  case point_left_tone1
+  case point_left_tone2
+  case point_left_tone3
+  case point_left_tone4
+  case point_left_tone5
+  case point_right
+  case point_right_tone1
+  case point_right_tone2
+  case point_right_tone3
+  case point_right_tone4
+  case point_right_tone5
+  case punch
+  case punch_tone1
+  case punch_tone2
+  case punch_tone3
+  case punch_tone4
+  case punch_tone5
+  case wave
+  case wave_tone1
+  case wave_tone2
+  case wave_tone3
+  case wave_tone4
+  case wave_tone5
+  case ok_hand
+  case ok_hand_tone1
+  case ok_hand_tone2
+  case ok_hand_tone3
+  case ok_hand_tone4
+  case ok_hand_tone5
+  case thumbsup
+  case thumbsup_tone1
+  case thumbsup_tone2
+  case thumbsup_tone3
+  case thumbsup_tone4
+  case thumbsup_tone5
+  case thumbsdown
+  case thumbsdown_tone1
+  case thumbsdown_tone2
+  case thumbsdown_tone3
+  case thumbsdown_tone4
+  case thumbsdown_tone5
+  case clap
+  case clap_tone1
+  case clap_tone2
+  case clap_tone3
+  case clap_tone4
+  case clap_tone5
+  case open_hands
+  case open_hands_tone1
+  case open_hands_tone2
+  case open_hands_tone3
+  case open_hands_tone4
+  case open_hands_tone5
+  case crown
+  case womans_hat
+  case eyeglasses
+  case necktie
+  case shirt
+  case jeans
+  case dress
+  case kimono
+  case bikini
+  case womans_clothes
+  case purse
+  case handbag
+  case pouch
+  case mans_shoe
+  case athletic_shoe
+  case high_heel
+  case sandal
+  case boot
+  case footprints
+  case bust_in_silhouette
+  case busts_in_silhouette
+  case boy
+  case boy_tone1
+  case boy_tone2
+  case boy_tone3
+  case boy_tone4
+  case boy_tone5
+  case girl
+  case girl_tone1
+  case girl_tone2
+  case girl_tone3
+  case girl_tone4
+  case girl_tone5
+  case man
+  case man_health_worker
+  case man_judge
+  case man_pilot
+  case couple_mm
+  case kiss_mm
+  case man_farmer
+  case man_cook
+  case man_student
+  case man_singer
+  case man_artist
+  case man_teacher
+  case man_factory_worker
+  case man_tone1
+  case man_health_worker_tone1
+  case man_judge_tone1
+  case man_pilot_tone1
+  case man_farmer_tone1
+  case man_cook_tone1
+  case man_student_tone1
+  case man_singer_tone1
+  case man_artist_tone1
+  case man_teacher_tone1
+  case man_factory_worker_tone1
+  case man_technologist_tone1
+  case man_office_worker_tone1
+  case man_mechanic_tone1
+  case man_scientist_tone1
+  case man_astronaut_tone1
+  case man_firefighter_tone1
+  case man_red_haired_tone1
+  case man_curly_haired_tone1
+  case man_bald_tone1
+  case man_white_haired_tone1
+  case man_tone2
+  case man_health_worker_tone2
+  case man_judge_tone2
+  case man_pilot_tone2
+  case man_farmer_tone2
+  case man_cook_tone2
+  case man_student_tone2
+  case man_singer_tone2
+  case man_artist_tone2
+  case man_teacher_tone2
+  case man_factory_worker_tone2
+  case man_technologist_tone2
+  case man_office_worker_tone2
+  case man_mechanic_tone2
+  case man_scientist_tone2
+  case man_astronaut_tone2
+  case man_firefighter_tone2
+  case man_red_haired_tone2
+  case man_curly_haired_tone2
+  case man_bald_tone2
+  case man_white_haired_tone2
+  case man_tone3
+  case man_health_worker_tone3
+  case man_judge_tone3
+  case man_pilot_tone3
+  case man_farmer_tone3
+  case man_cook_tone3
+  case man_student_tone3
+  case man_singer_tone3
+  case man_artist_tone3
+  case man_teacher_tone3
+  case man_factory_worker_tone3
+  case man_technologist_tone3
+  case man_office_worker_tone3
+  case man_mechanic_tone3
+  case man_scientist_tone3
+  case man_astronaut_tone3
+  case man_firefighter_tone3
+  case man_red_haired_tone3
+  case man_curly_haired_tone3
+  case man_bald_tone3
+  case man_white_haired_tone3
+  case man_tone4
+  case man_health_worker_tone4
+  case man_judge_tone4
+  case man_pilot_tone4
+  case man_farmer_tone4
+  case man_cook_tone4
+  case man_student_tone4
+  case man_singer_tone4
+  case man_artist_tone4
+  case man_teacher_tone4
+  case man_factory_worker_tone4
+  case man_technologist_tone4
+  case man_office_worker_tone4
+  case man_mechanic_tone4
+  case man_scientist_tone4
+  case man_astronaut_tone4
+  case man_firefighter_tone4
+  case man_red_haired_tone4
+  case man_curly_haired_tone4
+  case man_bald_tone4
+  case man_white_haired_tone4
+  case man_tone5
+  case man_health_worker_tone5
+  case man_judge_tone5
+  case man_pilot_tone5
+  case man_farmer_tone5
+  case man_cook_tone5
+  case man_student_tone5
+  case man_singer_tone5
+  case man_artist_tone5
+  case man_teacher_tone5
+  case man_factory_worker_tone5
+  case man_technologist_tone5
+  case man_office_worker_tone5
+  case man_mechanic_tone5
+  case man_scientist_tone5
+  case man_astronaut_tone5
+  case man_firefighter_tone5
+  case man_red_haired_tone5
+  case man_curly_haired_tone5
+  case man_bald_tone5
+  case man_white_haired_tone5
+  case family_man_boy
+  case family_man_boy_boy
+  case family_man_girl
+  case family_man_girl_boy
+  case family_man_girl_girl
+  case family_mmb
+  case family_mmbb
+  case family_mmg
+  case family_mmgb
+  case family_mmgg
+  case family_man_woman_boy
+  case family_mwbb
+  case family_mwg
+  case family_mwgb
+  case family_mwgg
+  case man_technologist
+  case man_office_worker
+  case man_mechanic
+  case man_scientist
+  case man_astronaut
+  case man_firefighter
+  case man_red_haired
+  case man_curly_haired
+  case man_bald
+  case man_white_haired
+  case woman
+  case woman_health_worker
+  case woman_judge
+  case woman_pilot
+  case couple_with_heart_woman_man
+  case couple_ww
+  case kiss_woman_man
+  case kiss_ww
+  case woman_farmer
+  case woman_cook
+  case woman_student
+  case woman_singer
+  case woman_artist
+  case woman_teacher
+  case woman_factory_worker
+  case woman_tone1
+  case woman_health_worker_tone1
+  case woman_judge_tone1
+  case woman_pilot_tone1
+  case woman_farmer_tone1
+  case woman_cook_tone1
+  case woman_student_tone1
+  case woman_singer_tone1
+  case woman_artist_tone1
+  case woman_teacher_tone1
+  case woman_factory_worker_tone1
+  case woman_technologist_tone1
+  case woman_office_worker_tone1
+  case woman_mechanic_tone1
+  case woman_scientist_tone1
+  case woman_astronaut_tone1
+  case woman_firefighter_tone1
+  case woman_red_haired_tone1
+  case woman_curly_haired_tone1
+  case woman_bald_tone1
+  case woman_white_haired_tone1
+  case woman_tone2
+  case woman_health_worker_tone2
+  case woman_judge_tone2
+  case woman_pilot_tone2
+  case woman_farmer_tone2
+  case woman_cook_tone2
+  case woman_student_tone2
+  case woman_singer_tone2
+  case woman_artist_tone2
+  case woman_teacher_tone2
+  case woman_factory_worker_tone2
+  case woman_technologist_tone2
+  case woman_office_worker_tone2
+  case woman_mechanic_tone2
+  case woman_scientist_tone2
+  case woman_astronaut_tone2
+  case woman_firefighter_tone2
+  case woman_red_haired_tone2
+  case woman_curly_haired_tone2
+  case woman_bald_tone2
+  case woman_white_haired_tone2
+  case woman_tone3
+  case woman_health_worker_tone3
+  case woman_judge_tone3
+  case woman_pilot_tone3
+  case woman_farmer_tone3
+  case woman_cook_tone3
+  case woman_student_tone3
+  case woman_singer_tone3
+  case woman_artist_tone3
+  case woman_teacher_tone3
+  case woman_factory_worker_tone3
+  case woman_technologist_tone3
+  case woman_office_worker_tone3
+  case woman_mechanic_tone3
+  case woman_scientist_tone3
+  case woman_astronaut_tone3
+  case woman_firefighter_tone3
+  case woman_red_haired_tone3
+  case woman_curly_haired_tone3
+  case woman_bald_tone3
+  case woman_white_haired_tone3
+  case woman_tone4
+  case woman_health_worker_tone4
+  case woman_judge_tone4
+  case woman_pilot_tone4
+  case woman_farmer_tone4
+  case woman_cook_tone4
+  case woman_student_tone4
+  case woman_singer_tone4
+  case woman_artist_tone4
+  case woman_teacher_tone4
+  case woman_factory_worker_tone4
+  case woman_technologist_tone4
+  case woman_office_worker_tone4
+  case woman_mechanic_tone4
+  case woman_scientist_tone4
+  case woman_astronaut_tone4
+  case woman_firefighter_tone4
+  case woman_red_haired_tone4
+  case woman_curly_haired_tone4
+  case woman_bald_tone4
+  case woman_white_haired_tone4
+  case woman_tone5
+  case woman_health_worker_tone5
+  case woman_judge_tone5
+  case woman_pilot_tone5
+  case woman_farmer_tone5
+  case woman_cook_tone5
+  case woman_student_tone5
+  case woman_singer_tone5
+  case woman_artist_tone5
+  case woman_teacher_tone5
+  case woman_factory_worker_tone5
+  case woman_technologist_tone5
+  case woman_office_worker_tone5
+  case woman_mechanic_tone5
+  case woman_scientist_tone5
+  case woman_astronaut_tone5
+  case woman_firefighter_tone5
+  case woman_red_haired_tone5
+  case woman_curly_haired_tone5
+  case woman_bald_tone5
+  case woman_white_haired_tone5
+  case family_woman_boy
+  case family_woman_boy_boy
+  case family_woman_girl
+  case family_woman_girl_boy
+  case family_woman_girl_girl
+  case family_wwb
+  case family_wwbb
+  case family_wwg
+  case family_wwgb
+  case family_wwgg
+  case woman_technologist
+  case woman_office_worker
+  case woman_mechanic
+  case woman_scientist
+  case woman_astronaut
+  case woman_firefighter
+  case woman_red_haired
+  case woman_curly_haired
+  case woman_bald
+  case woman_white_haired
+  case family
+  case couple
+  case two_men_holding_hands
+  case two_women_holding_hands
+  case police_officer
+  case woman_police_officer
+  case man_police_officer
+  case police_officer_tone1
+  case woman_police_officer_tone1
+  case man_police_officer_tone1
+  case police_officer_tone2
+  case woman_police_officer_tone2
+  case man_police_officer_tone2
+  case police_officer_tone3
+  case woman_police_officer_tone3
+  case man_police_officer_tone3
+  case police_officer_tone4
+  case woman_police_officer_tone4
+  case man_police_officer_tone4
+  case police_officer_tone5
+  case woman_police_officer_tone5
+  case man_police_officer_tone5
+  case people_with_bunny_ears_partying
+  case women_with_bunny_ears_partying
+  case men_with_bunny_ears_partying
+  case bride_with_veil
+  case bride_with_veil_tone1
+  case bride_with_veil_tone2
+  case bride_with_veil_tone3
+  case bride_with_veil_tone4
+  case bride_with_veil_tone5
+  case blond_haired_person
+  case blond_haired_woman
+  case blond_haired_man
+  case blond_haired_person_tone1
+  case blond_haired_woman_tone1
+  case blond_haired_man_tone1
+  case blond_haired_person_tone2
+  case blond_haired_woman_tone2
+  case blond_haired_man_tone2
+  case blond_haired_person_tone3
+  case blond_haired_woman_tone3
+  case blond_haired_man_tone3
+  case blond_haired_person_tone4
+  case blond_haired_woman_tone4
+  case blond_haired_man_tone4
+  case blond_haired_person_tone5
+  case blond_haired_woman_tone5
+  case blond_haired_man_tone5
+  case man_with_chinese_cap
+  case man_with_chinese_cap_tone1
+  case man_with_chinese_cap_tone2
+  case man_with_chinese_cap_tone3
+  case man_with_chinese_cap_tone4
+  case man_with_chinese_cap_tone5
+  case person_wearing_turban
+  case woman_wearing_turban
+  case man_wearing_turban
+  case person_wearing_turban_tone1
+  case woman_wearing_turban_tone1
+  case man_wearing_turban_tone1
+  case person_wearing_turban_tone2
+  case woman_wearing_turban_tone2
+  case man_wearing_turban_tone2
+  case person_wearing_turban_tone3
+  case woman_wearing_turban_tone3
+  case man_wearing_turban_tone3
+  case person_wearing_turban_tone4
+  case woman_wearing_turban_tone4
+  case man_wearing_turban_tone4
+  case person_wearing_turban_tone5
+  case woman_wearing_turban_tone5
+  case man_wearing_turban_tone5
+  case older_man
+  case older_man_tone1
+  case older_man_tone2
+  case older_man_tone3
+  case older_man_tone4
+  case older_man_tone5
+  case older_woman
+  case older_woman_tone1
+  case older_woman_tone2
+  case older_woman_tone3
+  case older_woman_tone4
+  case older_woman_tone5
+  case baby
+  case baby_tone1
+  case baby_tone2
+  case baby_tone3
+  case baby_tone4
+  case baby_tone5
+  case construction_worker
+  case woman_construction_worker
+  case man_construction_worker
+  case construction_worker_tone1
+  case woman_construction_worker_tone1
+  case man_construction_worker_tone1
+  case construction_worker_tone2
+  case woman_construction_worker_tone2
+  case man_construction_worker_tone2
+  case construction_worker_tone3
+  case woman_construction_worker_tone3
+  case man_construction_worker_tone3
+  case construction_worker_tone4
+  case woman_construction_worker_tone4
+  case man_construction_worker_tone4
+  case construction_worker_tone5
+  case woman_construction_worker_tone5
+  case man_construction_worker_tone5
+  case princess
+  case princess_tone1
+  case princess_tone2
+  case princess_tone3
+  case princess_tone4
+  case princess_tone5
+  case japanese_ogre
+  case japanese_goblin
+  case ghost
+  case angel
+  case angel_tone1
+  case angel_tone2
+  case angel_tone3
+  case angel_tone4
+  case angel_tone5
+  case alien
+  case space_invader
+  case imp
+  case skull
+  case person_tipping_hand
+  case woman_tipping_hand
+  case man_tipping_hand
+  case person_tipping_hand_tone1
+  case woman_tipping_hand_tone1
+  case man_tipping_hand_tone1
+  case person_tipping_hand_tone2
+  case woman_tipping_hand_tone2
+  case man_tipping_hand_tone2
+  case person_tipping_hand_tone3
+  case woman_tipping_hand_tone3
+  case man_tipping_hand_tone3
+  case person_tipping_hand_tone4
+  case woman_tipping_hand_tone4
+  case man_tipping_hand_tone4
+  case person_tipping_hand_tone5
+  case woman_tipping_hand_tone5
+  case man_tipping_hand_tone5
+  case guard0
+  case woman_guard
+  case man_guard
+  case guard_tone1
+  case woman_guard_tone1
+  case man_guard_tone1
+  case guard_tone2
+  case woman_guard_tone2
+  case man_guard_tone2
+  case guard_tone3
+  case woman_guard_tone3
+  case man_guard_tone3
+  case guard_tone4
+  case woman_guard_tone4
+  case man_guard_tone4
+  case guard_tone5
+  case woman_guard_tone5
+  case man_guard_tone5
+  case dancer
+  case dancer_tone1
+  case dancer_tone2
+  case dancer_tone3
+  case dancer_tone4
+  case dancer_tone5
+  case lipstick
+  case nail_care
+  case nail_care_tone1
+  case nail_care_tone2
+  case nail_care_tone3
+  case nail_care_tone4
+  case nail_care_tone5
+  case person_getting_massage
+  case woman_getting_face_massage
+  case man_getting_face_massage
+  case person_getting_massage_tone1
+  case woman_getting_face_massage_tone1
+  case man_getting_face_massage_tone1
+  case person_getting_massage_tone2
+  case woman_getting_face_massage_tone2
+  case man_getting_face_massage_tone2
+  case person_getting_massage_tone3
+  case woman_getting_face_massage_tone3
+  case man_getting_face_massage_tone3
+  case person_getting_massage_tone4
+  case woman_getting_face_massage_tone4
+  case man_getting_face_massage_tone4
+  case person_getting_massage_tone5
+  case woman_getting_face_massage_tone5
+  case man_getting_face_massage_tone5
+  case person_getting_haircut
+  case woman_getting_haircut
+  case man_getting_haircut
+  case person_getting_haircut_tone1
+  case woman_getting_haircut_tone1
+  case man_getting_haircut_tone1
+  case person_getting_haircut_tone2
+  case woman_getting_haircut_tone2
+  case man_getting_haircut_tone2
+  case person_getting_haircut_tone3
+  case woman_getting_haircut_tone3
+  case man_getting_haircut_tone3
+  case person_getting_haircut_tone4
+  case woman_getting_haircut_tone4
+  case man_getting_haircut_tone4
+  case person_getting_haircut_tone5
+  case woman_getting_haircut_tone5
+  case man_getting_haircut_tone5
+  case barber
+  case syringe
+  case pill
+  case kiss
+  case love_letter
+  case ring
+  case gem
+  case couplekiss
+  case bouquet
+  case couple_with_heart
+  case wedding
+  case heartbeat
+  case broken_heart
+  case two_hearts
+  case sparkling_heart
+  case heartpulse
+  case cupid
+  case blue_heart
+  case green_heart
+  case yellow_heart
+  case purple_heart
+  case gift_heart
+  case revolving_hearts
+  case heart_decoration
+  case diamond_shape_with_a_dot_inside
+  case bulb
+  case anger
+  case bomb
+  case zzz
+  case boom
+  case sweat_drops
+  case droplet
+  case dash
+  case poop
+  case muscle
+  case muscle_tone1
+  case muscle_tone2
+  case muscle_tone3
+  case muscle_tone4
+  case muscle_tone5
+  case dizzy
+  case speech_balloon
+  case thought_balloon
+  case white_flower
+  case hundred
+  case moneybag
+  case currency_exchange
+  case heavy_dollar_sign
+  case credit_card
+  case yen
+  case dollar
+  case euro
+  case pound
+  case money_with_wings
+  case chart
+  case seat
+  case computer
+  case briefcase
+  case minidisc
+  case floppy_disk
+  case cd
+  case dvd
+  case file_folder
+  case open_file_folder
+  case page_with_curl
+  case page_facing_up
+  case date
+  case calendar
+  case card_index
+  case chart_with_upwards_trend
+  case chart_with_downwards_trend
+  case bar_chart
+  case clipboard
+  case pushpin
+  case round_pushpin
+  case paperclip
+  case straight_ruler
+  case triangular_ruler
+  case bookmark_tabs
+  case ledger
+  case notebook
+  case notebook_with_decorative_cover
+  case closed_book
+  case book
+  case green_book
+  case blue_book
+  case orange_book
+  case books
+  case name_badge
+  case scroll
+  case pencil
+  case telephone_receiver
+  case pager
+  case fax
+  case satellite
+  case loudspeaker
+  case mega
+  case outbox_tray
+  case inbox_tray
+  case package
+  case e_mail
+  case incoming_envelope
+  case envelope_with_arrow
+  case mailbox_closed
+  case mailbox
+  case mailbox_with_mail
+  case mailbox_with_no_mail
+  case postbox
+  case postal_horn
+  case newspaper
+  case iphone
+  case calling
+  case vibration_mode
+  case mobile_phone_off
+  case no_mobile_phones
+  case signal_strength
+  case camera
+  case camera_with_flash
+  case video_camera
+  case tv
+  case radio
+  case vhs
+  case projector
+  case prayer_beads
+  case twisted_rightwards_arrows
+  case repeat0
+  case repeat_one
+  case arrows_clockwise
+  case arrows_counterclockwise
+  case low_brightness
+  case high_brightness
+  case mute
+  case speaker
+  case sound
+  case loud_sound
+  case battery
+  case electric_plug
+  case mag
+  case mag_right
+  case lock_with_ink_pen
+  case closed_lock_with_key
+  case key
+  case lock
+  case unlock
+  case bell
+  case no_bell
+  case bookmark
+  case link
+  case radio_button
+  case back
+  case end
+  case on
+  case soon
+  case top
+  case underage
+  case keycap_ten
+  case capital_abcd
+  case abcd
+  case one_two_three_four
+  case symbols
+  case abc
+  case fire
+  case flashlight
+  case wrench
+  case hammer
+  case nut_and_bolt
+  case knife
+  case gun
+  case microscope
+  case telescope
+  case crystal_ball
+  case six_pointed_star
+  case beginner
+  case trident
+  case black_square_button
+  case white_square_button
+  case red_circle
+  case blue_circle
+  case large_orange_diamond
+  case large_blue_diamond
+  case small_orange_diamond
+  case small_blue_diamond
+  case small_red_triangle
+  case small_red_triangle_down
+  case arrow_up_small
+  case arrow_down_small
+  case om_symbol
+  case dove
+  case kaaba
+  case mosque
+  case synagogue
+  case menorah
+  case clock1
+  case clock2
+  case clock3
+  case clock4
+  case clock5
+  case clock6
+  case clock7
+  case clock8
+  case clock9
+  case clock10
+  case clock11
+  case clock12
+  case clock130
+  case clock230
+  case clock330
+  case clock430
+  case clock530
+  case clock630
+  case clock730
+  case clock830
+  case clock930
+  case clock1030
+  case clock1130
+  case clock1230
+  case candle
+  case clock
+  case hole
+  case levitate
+  case levitate_tone1
+  case levitate_tone2
+  case levitate_tone3
+  case levitate_tone4
+  case levitate_tone5
+  case detective
+  case woman_detective
+  case man_detective
+  case detective_tone1
+  case woman_detective_tone1
+  case man_detective_tone1
+  case detective_tone2
+  case woman_detective_tone2
+  case man_detective_tone2
+  case detective_tone3
+  case woman_detective_tone3
+  case man_detective_tone3
+  case detective_tone4
+  case woman_detective_tone4
+  case man_detective_tone4
+  case detective_tone5
+  case woman_detective_tone5
+  case man_detective_tone5
+  case dark_sunglasses
+  case spider
+  case spider_web
+  case joystick
+  case man_dancing
+  case man_dancing_tone1
+  case man_dancing_tone2
+  case man_dancing_tone3
+  case man_dancing_tone4
+  case man_dancing_tone5
+  case paperclips
+  case pen_ballpoint
+  case pen_fountain
+  case paintbrush
+  case crayon
+  case hand_splayed
+  case hand_splayed_tone1
+  case hand_splayed_tone2
+  case hand_splayed_tone3
+  case hand_splayed_tone4
+  case hand_splayed_tone5
+  case middle_finger
+  case middle_finger_tone1
+  case middle_finger_tone2
+  case middle_finger_tone3
+  case middle_finger_tone4
+  case middle_finger_tone5
+  case vulcan
+  case vulcan_tone1
+  case vulcan_tone2
+  case vulcan_tone3
+  case vulcan_tone4
+  case vulcan_tone5
+  case black_heart
+  case desktop
+  case printer
+  case mouse_three_button
+  case trackball
+  case frame_photo
+  case dividers
+  case card_box
+  case file_cabinet
+  case wastebasket
+  case notepad_spiral
+  case calendar_spiral
+  case compression
+  case key2
+  case newspaper2
+  case dagger
+  case speaking_head
+  case speech_left
+  case anger_right
+  case ballot_box
+  case map
+  case mount_fuji
+  case tokyo_tower
+  case statue_of_liberty
+  case japan
+  case moyai
+  case grinning
+  case grin
+  case joy
+  case smiley
+  case smile
+  case sweat_smile
+  case laughing
+  case innocent
+  case smiling_imp
+  case wink
+  case blush
+  case yum
+  case relieved
+  case heart_eyes
+  case sunglasses
+  case smirk
+  case neutral_face
+  case expressionless
+  case unamused
+  case sweat
+  case pensive
+  case confused
+  case confounded
+  case kissing
+  case kissing_heart
+  case kissing_smiling_eyes
+  case kissing_closed_eyes
+  case stuck_out_tongue
+  case stuck_out_tongue_winking_eye
+  case stuck_out_tongue_closed_eyes
+  case disappointed
+  case worried
+  case angry
+  case rage
+  case cry
+  case persevere
+  case triumph
+  case disappointed_relieved
+  case frowning
+  case anguished
+  case fearful
+  case weary
+  case sleepy
+  case tired_face
+  case grimacing
+  case sob
+  case open_mouth
+  case hushed
+  case cold_sweat
+  case scream
+  case astonished
+  case flushed
+  case sleeping
+  case dizzy_face
+  case no_mouth
+  case mask
+  case smile_cat
+  case joy_cat
+  case smiley_cat
+  case heart_eyes_cat
+  case smirk_cat
+  case kissing_cat
+  case pouting_cat
+  case crying_cat_face
+  case scream_cat
+  case slight_frown
+  case slight_smile
+  case upside_down
+  case rolling_eyes
+  case person_gesturing_no
+  case woman_gesturing_no
+  case man_gesturing_no
+  case person_gesturing_no_tone1
+  case woman_gesturing_no_tone1
+  case man_gesturing_no_tone1
+  case person_gesturing_no_tone2
+  case woman_gesturing_no_tone2
+  case man_gesturing_no_tone2
+  case person_gesturing_no_tone3
+  case woman_gesturing_no_tone3
+  case man_gesturing_no_tone3
+  case person_gesturing_no_tone4
+  case woman_gesturing_no_tone4
+  case man_gesturing_no_tone4
+  case person_gesturing_no_tone5
+  case woman_gesturing_no_tone5
+  case man_gesturing_no_tone5
+  case person_gesturing_ok
+  case woman_gesturing_ok
+  case man_gesturing_ok
+  case person_gesturing_ok_tone1
+  case woman_gesturing_ok_tone1
+  case man_gesturing_ok_tone1
+  case person_gesturing_ok_tone2
+  case woman_gesturing_ok_tone2
+  case man_gesturing_ok_tone2
+  case person_gesturing_ok_tone3
+  case woman_gesturing_ok_tone3
+  case man_gesturing_ok_tone3
+  case person_gesturing_ok_tone4
+  case woman_gesturing_ok_tone4
+  case man_gesturing_ok_tone4
+  case person_gesturing_ok_tone5
+  case woman_gesturing_ok_tone5
+  case man_gesturing_ok_tone5
+  case person_bowing
+  case woman_bowing
+  case man_bowing
+  case person_bowing_tone1
+  case woman_bowing_tone1
+  case man_bowing_tone1
+  case person_bowing_tone2
+  case woman_bowing_tone2
+  case man_bowing_tone2
+  case person_bowing_tone3
+  case woman_bowing_tone3
+  case man_bowing_tone3
+  case person_bowing_tone4
+  case woman_bowing_tone4
+  case man_bowing_tone4
+  case person_bowing_tone5
+  case woman_bowing_tone5
+  case man_bowing_tone5
+  case see_no_evil
+  case hear_no_evil
+  case speak_no_evil
+  case person_raising_hand
+  case woman_raising_hand
+  case man_raising_hand
+  case person_raising_hand_tone1
+  case woman_raising_hand_tone1
+  case man_raising_hand_tone1
+  case person_raising_hand_tone2
+  case woman_raising_hand_tone2
+  case man_raising_hand_tone2
+  case person_raising_hand_tone3
+  case woman_raising_hand_tone3
+  case man_raising_hand_tone3
+  case person_raising_hand_tone4
+  case woman_raising_hand_tone4
+  case man_raising_hand_tone4
+  case person_raising_hand_tone5
+  case woman_raising_hand_tone5
+  case man_raising_hand_tone5
+  case raised_hands
+  case raised_hands_tone1
+  case raised_hands_tone2
+  case raised_hands_tone3
+  case raised_hands_tone4
+  case raised_hands_tone5
+  case person_frowning
+  case woman_frowning
+  case man_frowning
+  case person_frowning_tone1
+  case woman_frowning_tone1
+  case man_frowning_tone1
+  case person_frowning_tone2
+  case woman_frowning_tone2
+  case man_frowning_tone2
+  case person_frowning_tone3
+  case woman_frowning_tone3
+  case man_frowning_tone3
+  case person_frowning_tone4
+  case woman_frowning_tone4
+  case man_frowning_tone4
+  case person_frowning_tone5
+  case woman_frowning_tone5
+  case man_frowning_tone5
+  case person_pouting
+  case woman_pouting
+  case man_pouting
+  case person_pouting_tone1
+  case woman_pouting_tone1
+  case man_pouting_tone1
+  case person_pouting_tone2
+  case woman_pouting_tone2
+  case man_pouting_tone2
+  case person_pouting_tone3
+  case woman_pouting_tone3
+  case man_pouting_tone3
+  case person_pouting_tone4
+  case woman_pouting_tone4
+  case man_pouting_tone4
+  case person_pouting_tone5
+  case woman_pouting_tone5
+  case man_pouting_tone5
+  case pray
+  case pray_tone1
+  case pray_tone2
+  case pray_tone3
+  case pray_tone4
+  case pray_tone5
+  case rocket
+  case helicopter
+  case steam_locomotive
+  case railway_car
+  case bullettrain_side
+  case bullettrain_front
+  case train2
+  case metro
+  case light_rail
+  case station
+  case tram
+  case train
+  case bus
+  case oncoming_bus
+  case trolleybus
+  case busstop
+  case minibus
+  case ambulance
+  case fire_engine
+  case police_car
+  case oncoming_police_car
+  case taxi
+  case oncoming_taxi
+  case red_car
+  case oncoming_automobile
+  case blue_car
+  case truck
+  case articulated_lorry
+  case tractor
+  case monorail
+  case mountain_railway
+  case suspension_railway
+  case mountain_cableway
+  case aerial_tramway
+  case ship
+  case person_rowing_boat
+  case woman_rowing_boat
+  case man_rowing_boat
+  case person_rowing_boat_tone1
+  case woman_rowing_boat_tone1
+  case man_rowing_boat_tone1
+  case person_rowing_boat_tone2
+  case woman_rowing_boat_tone2
+  case man_rowing_boat_tone2
+  case person_rowing_boat_tone3
+  case woman_rowing_boat_tone3
+  case man_rowing_boat_tone3
+  case person_rowing_boat_tone4
+  case woman_rowing_boat_tone4
+  case man_rowing_boat_tone4
+  case person_rowing_boat_tone5
+  case woman_rowing_boat_tone5
+  case man_rowing_boat_tone5
+  case speedboat
+  case traffic_light
+  case vertical_traffic_light
+  case construction
+  case rotating_light
+  case triangular_flag_on_post
+  case door
+  case no_entry_sign
+  case smoking
+  case no_smoking
+  case put_litter_in_its_place
+  case do_not_litter
+  case potable_water
+  case non_potable_water
+  case bike
+  case no_bicycles
+  case person_biking
+  case woman_biking
+  case man_biking
+  case person_biking_tone1
+  case woman_biking_tone1
+  case man_biking_tone1
+  case person_biking_tone2
+  case woman_biking_tone2
+  case man_biking_tone2
+  case person_biking_tone3
+  case woman_biking_tone3
+  case man_biking_tone3
+  case person_biking_tone4
+  case woman_biking_tone4
+  case man_biking_tone4
+  case person_biking_tone5
+  case woman_biking_tone5
+  case man_biking_tone5
+  case person_mountain_biking
+  case woman_mountain_biking
+  case man_mountain_biking
+  case person_mountain_biking_tone1
+  case woman_mountain_biking_tone1
+  case man_mountain_biking_tone1
+  case person_mountain_biking_tone2
+  case woman_mountain_biking_tone2
+  case man_mountain_biking_tone2
+  case person_mountain_biking_tone3
+  case woman_mountain_biking_tone3
+  case man_mountain_biking_tone3
+  case person_mountain_biking_tone4
+  case woman_mountain_biking_tone4
+  case man_mountain_biking_tone4
+  case person_mountain_biking_tone5
+  case woman_mountain_biking_tone5
+  case man_mountain_biking_tone5
+  case person_walking
+  case woman_walking
+  case man_walking
+  case person_walking_tone1
+  case woman_walking_tone1
+  case man_walking_tone1
+  case person_walking_tone2
+  case woman_walking_tone2
+  case man_walking_tone2
+  case person_walking_tone3
+  case woman_walking_tone3
+  case man_walking_tone3
+  case person_walking_tone4
+  case woman_walking_tone4
+  case man_walking_tone4
+  case person_walking_tone5
+  case woman_walking_tone5
+  case man_walking_tone5
+  case no_pedestrians
+  case children_crossing
+  case mens
+  case womens
+  case restroom
+  case baby_symbol
+  case toilet
+  case wc
+  case shower
+  case bath
+  case bath_tone1
+  case bath_tone2
+  case bath_tone3
+  case bath_tone4
+  case bath_tone5
+  case bathtub
+  case passport_control
+  case customs
+  case baggage_claim
+  case left_luggage
+  case couch
+  case sleeping_accommodation
+  case person_in_bed_tone1
+  case person_in_bed_tone2
+  case person_in_bed_tone3
+  case person_in_bed_tone4
+  case person_in_bed_tone5
+  case shopping_bags
+  case bellhop
+  case bed
+  case place_of_worship
+  case octagonal_sign
+  case shopping_cart
+  case tools
+  case shield
+  case oil
+  case motorway
+  case railway_track
+  case motorboat
+  case airplane_small
+  case airplane_departure
+  case airplane_arriving
+  case satellite_orbital
+  case cruise_ship
+  case scooter
+  case motor_scooter
+  case canoe
+  case sled
+  case flying_saucer
+  case skateboard
+  case zipper_mouth
+  case money_mouth
+  case thermometer_face
+  case nerd
+  case thinking
+  case head_bandage
+  case robot
+  case hugging
+  case metal
+  case metal_tone1
+  case metal_tone2
+  case metal_tone3
+  case metal_tone4
+  case metal_tone5
+  case call_me
+  case call_me_tone1
+  case call_me_tone2
+  case call_me_tone3
+  case call_me_tone4
+  case call_me_tone5
+  case raised_back_of_hand
+  case raised_back_of_hand_tone1
+  case raised_back_of_hand_tone2
+  case raised_back_of_hand_tone3
+  case raised_back_of_hand_tone4
+  case raised_back_of_hand_tone5
+  case left_facing_fist
+  case left_facing_fist_tone1
+  case left_facing_fist_tone2
+  case left_facing_fist_tone3
+  case left_facing_fist_tone4
+  case left_facing_fist_tone5
+  case right_facing_fist
+  case right_facing_fist_tone1
+  case right_facing_fist_tone2
+  case right_facing_fist_tone3
+  case right_facing_fist_tone4
+  case right_facing_fist_tone5
+  case handshake
+  case fingers_crossed
+  case fingers_crossed_tone1
+  case fingers_crossed_tone2
+  case fingers_crossed_tone3
+  case fingers_crossed_tone4
+  case fingers_crossed_tone5
+  case love_you_gesture
+  case love_you_gesture_tone1
+  case love_you_gesture_tone2
+  case love_you_gesture_tone3
+  case love_you_gesture_tone4
+  case love_you_gesture_tone5
+  case cowboy
+  case clown
+  case nauseated_face
+  case rofl
+  case drooling_face
+  case lying_face
+  case person_facepalming
+  case woman_facepalming
+  case man_facepalming
+  case person_facepalming_tone1
+  case woman_facepalming_tone1
+  case man_facepalming_tone1
+  case person_facepalming_tone2
+  case woman_facepalming_tone2
+  case man_facepalming_tone2
+  case person_facepalming_tone3
+  case woman_facepalming_tone3
+  case man_facepalming_tone3
+  case person_facepalming_tone4
+  case woman_facepalming_tone4
+  case man_facepalming_tone4
+  case person_facepalming_tone5
+  case woman_facepalming_tone5
+  case man_facepalming_tone5
+  case sneezing_face
+  case face_with_raised_eyebrow
+  case star_struck
+  case zany_face
+  case shushing_face
+  case face_with_symbols_over_mouth
+  case face_with_hand_over_mouth
+  case face_vomiting
+  case exploding_head
+  case pregnant_woman
+  case pregnant_woman_tone1
+  case pregnant_woman_tone2
+  case pregnant_woman_tone3
+  case pregnant_woman_tone4
+  case pregnant_woman_tone5
+  case breast_feeding
+  case breast_feeding_tone1
+  case breast_feeding_tone2
+  case breast_feeding_tone3
+  case breast_feeding_tone4
+  case breast_feeding_tone5
+  case palms_up_together
+  case palms_up_together_tone1
+  case palms_up_together_tone2
+  case palms_up_together_tone3
+  case palms_up_together_tone4
+  case palms_up_together_tone5
+  case selfie
+  case selfie_tone1
+  case selfie_tone2
+  case selfie_tone3
+  case selfie_tone4
+  case selfie_tone5
+  case prince
+  case prince_tone1
+  case prince_tone2
+  case prince_tone3
+  case prince_tone4
+  case prince_tone5
+  case man_in_tuxedo
+  case man_in_tuxedo_tone1
+  case man_in_tuxedo_tone2
+  case man_in_tuxedo_tone3
+  case man_in_tuxedo_tone4
+  case man_in_tuxedo_tone5
+  case mrs_claus
+  case mrs_claus_tone1
+  case mrs_claus_tone2
+  case mrs_claus_tone3
+  case mrs_claus_tone4
+  case mrs_claus_tone5
+  case person_shrugging
+  case woman_shrugging
+  case man_shrugging
+  case person_shrugging_tone1
+  case woman_shrugging_tone1
+  case man_shrugging_tone1
+  case person_shrugging_tone2
+  case woman_shrugging_tone2
+  case man_shrugging_tone2
+  case person_shrugging_tone3
+  case woman_shrugging_tone3
+  case man_shrugging_tone3
+  case person_shrugging_tone4
+  case woman_shrugging_tone4
+  case man_shrugging_tone4
+  case person_shrugging_tone5
+  case woman_shrugging_tone5
+  case man_shrugging_tone5
+  case person_doing_cartwheel
+  case woman_cartwheeling
+  case man_cartwheeling
+  case person_doing_cartwheel_tone1
+  case woman_cartwheeling_tone1
+  case man_cartwheeling_tone1
+  case person_doing_cartwheel_tone2
+  case woman_cartwheeling_tone2
+  case man_cartwheeling_tone2
+  case person_doing_cartwheel_tone3
+  case woman_cartwheeling_tone3
+  case man_cartwheeling_tone3
+  case person_doing_cartwheel_tone4
+  case woman_cartwheeling_tone4
+  case man_cartwheeling_tone4
+  case person_doing_cartwheel_tone5
+  case woman_cartwheeling_tone5
+  case man_cartwheeling_tone5
+  case person_juggling
+  case woman_juggling
+  case man_juggling
+  case person_juggling_tone1
+  case woman_juggling_tone1
+  case man_juggling_tone1
+  case person_juggling_tone2
+  case woman_juggling_tone2
+  case man_juggling_tone2
+  case person_juggling_tone3
+  case woman_juggling_tone3
+  case man_juggling_tone3
+  case person_juggling_tone4
+  case woman_juggling_tone4
+  case man_juggling_tone4
+  case person_juggling_tone5
+  case woman_juggling_tone5
+  case man_juggling_tone5
+  case person_fencing
+  case people_wrestling
+  case women_wrestling
+  case men_wrestling
+  case person_playing_water_polo
+  case woman_playing_water_polo
+  case man_playing_water_polo
+  case person_playing_water_polo_tone1
+  case woman_playing_water_polo_tone1
+  case man_playing_water_polo_tone1
+  case person_playing_water_polo_tone2
+  case woman_playing_water_polo_tone2
+  case man_playing_water_polo_tone2
+  case person_playing_water_polo_tone3
+  case woman_playing_water_polo_tone3
+  case man_playing_water_polo_tone3
+  case person_playing_water_polo_tone4
+  case woman_playing_water_polo_tone4
+  case man_playing_water_polo_tone4
+  case person_playing_water_polo_tone5
+  case woman_playing_water_polo_tone5
+  case man_playing_water_polo_tone5
+  case person_playing_handball
+  case woman_playing_handball
+  case man_playing_handball
+  case person_playing_handball_tone1
+  case woman_playing_handball_tone1
+  case man_playing_handball_tone1
+  case person_playing_handball_tone2
+  case woman_playing_handball_tone2
+  case man_playing_handball_tone2
+  case person_playing_handball_tone3
+  case woman_playing_handball_tone3
+  case man_playing_handball_tone3
+  case person_playing_handball_tone4
+  case woman_playing_handball_tone4
+  case man_playing_handball_tone4
+  case person_playing_handball_tone5
+  case woman_playing_handball_tone5
+  case man_playing_handball_tone5
+  case wilted_rose
+  case drum
+  case champagne_glass
+  case tumbler_glass
+  case spoon
+  case goal
+  case first_place
+  case second_place
+  case third_place
+  case boxing_glove
+  case martial_arts_uniform
+  case curling_stone
+  case lacrosse
+  case softball
+  case flying_disc
+  case croissant
+  case avocado
+  case cucumber
+  case bacon
+  case potato
+  case carrot
+  case french_bread
+  case salad
+  case shallow_pan_of_food
+  case stuffed_flatbread
+  case egg
+  case milk
+  case peanuts
+  case kiwi
+  case pancakes
+  case dumpling
+  case fortune_cookie
+  case takeout_box
+  case chopsticks
+  case bowl_with_spoon
+  case cup_with_straw
+  case coconut
+  case broccoli
+  case pie
+  case pretzel
+  case cut_of_meat
+  case sandwich
+  case canned_food
+  case leafy_green
+  case mango
+  case moon_cake
+  case bagel
+  case smiling_face_with_3_hearts
+  case partying_face
+  case woozy_face
+  case hot_face
+  case cold_face
+  case pleading_face
+  case lab_coat
+  case goggles
+  case hiking_boot
+  case womans_flat_shoe
+  case crab
+  case lion_face
+  case scorpion
+  case turkey
+  case unicorn
+  case eagle
+  case duck
+  case bat
+  case shark
+  case owl
+  case fox
+  case butterfly
+  case deer
+  case gorilla
+  case lizard
+  case rhino
+  case shrimp
+  case squid
+  case giraffe
+  case zebra
+  case hedgehog
+  case sauropod
+  case t_rex
+  case cricket
+  case kangaroo
+  case llama
+  case peacock
+  case hippopotamus
+  case parrot
+  case raccoon
+  case lobster
+  case mosquito
+  case microbe
+  case badger
+  case swan
+  case red_haired
+  case curly_haired
+  case bald
+  case white_haired
+  case bone
+  case leg
+  case leg_tone1
+  case leg_tone2
+  case leg_tone3
+  case leg_tone4
+  case leg_tone5
+  case foot
+  case foot_tone1
+  case foot_tone2
+  case foot_tone3
+  case foot_tone4
+  case foot_tone5
+  case tooth
+  case superhero
+  case woman_superhero
+  case man_superhero
+  case superhero_tone1
+  case woman_superhero_tone1
+  case man_superhero_tone1
+  case superhero_tone2
+  case woman_superhero_tone2
+  case man_superhero_tone2
+  case superhero_tone3
+  case woman_superhero_tone3
+  case man_superhero_tone3
+  case superhero_tone4
+  case woman_superhero_tone4
+  case man_superhero_tone4
+  case superhero_tone5
+  case woman_superhero_tone5
+  case man_superhero_tone5
+  case supervillain
+  case woman_supervillain
+  case man_supervillain
+  case supervillain_tone1
+  case woman_supervillain_tone1
+  case man_supervillain_tone1
+  case supervillain_tone2
+  case woman_supervillain_tone2
+  case man_supervillain_tone2
+  case supervillain_tone3
+  case woman_supervillain_tone3
+  case man_supervillain_tone3
+  case supervillain_tone4
+  case woman_supervillain_tone4
+  case man_supervillain_tone4
+  case supervillain_tone5
+  case woman_supervillain_tone5
+  case man_supervillain_tone5
+  case cheese
+  case cupcake
+  case salt
+  case face_with_monocle
+  case adult
+  case adult_tone1
+  case adult_tone2
+  case adult_tone3
+  case adult_tone4
+  case adult_tone5
+  case child
+  case child_tone1
+  case child_tone2
+  case child_tone3
+  case child_tone4
+  case child_tone5
+  case older_adult
+  case older_adult_tone1
+  case older_adult_tone2
+  case older_adult_tone3
+  case older_adult_tone4
+  case older_adult_tone5
+  case bearded_person
+  case bearded_person_tone1
+  case bearded_person_tone2
+  case bearded_person_tone3
+  case bearded_person_tone4
+  case bearded_person_tone5
+  case woman_with_headscarf
+  case woman_with_headscarf_tone1
+  case woman_with_headscarf_tone2
+  case woman_with_headscarf_tone3
+  case woman_with_headscarf_tone4
+  case woman_with_headscarf_tone5
+  case person_in_steamy_room
+  case woman_in_steamy_room
+  case man_in_steamy_room
+  case person_in_steamy_room_tone1
+  case woman_in_steamy_room_tone1
+  case man_in_steamy_room_tone1
+  case person_in_steamy_room_tone2
+  case woman_in_steamy_room_tone2
+  case man_in_steamy_room_tone2
+  case person_in_steamy_room_tone3
+  case woman_in_steamy_room_tone3
+  case man_in_steamy_room_tone3
+  case person_in_steamy_room_tone4
+  case woman_in_steamy_room_tone4
+  case man_in_steamy_room_tone4
+  case person_in_steamy_room_tone5
+  case woman_in_steamy_room_tone5
+  case man_in_steamy_room_tone5
+  case person_climbing
+  case woman_climbing
+  case man_climbing
+  case person_climbing_tone1
+  case woman_climbing_tone1
+  case man_climbing_tone1
+  case person_climbing_tone2
+  case woman_climbing_tone2
+  case man_climbing_tone2
+  case person_climbing_tone3
+  case woman_climbing_tone3
+  case man_climbing_tone3
+  case person_climbing_tone4
+  case woman_climbing_tone4
+  case man_climbing_tone4
+  case person_climbing_tone5
+  case woman_climbing_tone5
+  case man_climbing_tone5
+  case person_in_lotus_position
+  case woman_in_lotus_position
+  case man_in_lotus_position
+  case person_in_lotus_position_tone1
+  case woman_in_lotus_position_tone1
+  case man_in_lotus_position_tone1
+  case person_in_lotus_position_tone2
+  case woman_in_lotus_position_tone2
+  case man_in_lotus_position_tone2
+  case person_in_lotus_position_tone3
+  case woman_in_lotus_position_tone3
+  case man_in_lotus_position_tone3
+  case person_in_lotus_position_tone4
+  case woman_in_lotus_position_tone4
+  case man_in_lotus_position_tone4
+  case person_in_lotus_position_tone5
+  case woman_in_lotus_position_tone5
+  case man_in_lotus_position_tone5
+  case mage
+  case woman_mage
+  case man_mage
+  case mage_tone1
+  case woman_mage_tone1
+  case man_mage_tone1
+  case mage_tone2
+  case woman_mage_tone2
+  case man_mage_tone2
+  case mage_tone3
+  case woman_mage_tone3
+  case man_mage_tone3
+  case mage_tone4
+  case woman_mage_tone4
+  case man_mage_tone4
+  case mage_tone5
+  case woman_mage_tone5
+  case man_mage_tone5
+  case fairy
+  case woman_fairy
+  case man_fairy
+  case fairy_tone1
+  case woman_fairy_tone1
+  case man_fairy_tone1
+  case fairy_tone2
+  case woman_fairy_tone2
+  case man_fairy_tone2
+  case fairy_tone3
+  case woman_fairy_tone3
+  case man_fairy_tone3
+  case fairy_tone4
+  case woman_fairy_tone4
+  case man_fairy_tone4
+  case fairy_tone5
+  case woman_fairy_tone5
+  case man_fairy_tone5
+  case vampire
+  case woman_vampire
+  case man_vampire
+  case vampire_tone1
+  case woman_vampire_tone1
+  case man_vampire_tone1
+  case vampire_tone2
+  case woman_vampire_tone2
+  case man_vampire_tone2
+  case vampire_tone3
+  case woman_vampire_tone3
+  case man_vampire_tone3
+  case vampire_tone4
+  case woman_vampire_tone4
+  case man_vampire_tone4
+  case vampire_tone5
+  case woman_vampire_tone5
+  case man_vampire_tone5
+  case merperson
+  case mermaid
+  case merman
+  case merperson_tone1
+  case mermaid_tone1
+  case merman_tone1
+  case merperson_tone2
+  case mermaid_tone2
+  case merman_tone2
+  case merperson_tone3
+  case mermaid_tone3
+  case merman_tone3
+  case merperson_tone4
+  case mermaid_tone4
+  case merman_tone4
+  case merperson_tone5
+  case mermaid_tone5
+  case merman_tone5
+  case elf
+  case woman_elf
+  case man_elf
+  case elf_tone1
+  case woman_elf_tone1
+  case man_elf_tone1
+  case elf_tone2
+  case woman_elf_tone2
+  case man_elf_tone2
+  case elf_tone3
+  case woman_elf_tone3
+  case man_elf_tone3
+  case elf_tone4
+  case woman_elf_tone4
+  case man_elf_tone4
+  case elf_tone5
+  case woman_elf_tone5
+  case man_elf_tone5
+  case genie
+  case woman_genie
+  case man_genie
+  case zombie
+  case woman_zombie
+  case man_zombie
+  case brain
+  case orange_heart
+  case billed_cap
+  case scarf
+  case gloves
+  case coat
+  case socks
+  case red_envelope
+  case firecracker
+  case jigsaw
+  case test_tube
+  case petri_dish
+  case dna
+  case compass
+  case abacus
+  case fire_extinguisher
+  case toolbox
+  case bricks
+  case magnet
+  case luggage
+  case squeeze_bottle
+  case thread
+  case yarn
+  case safety_pin
+  case teddy_bear
+  case broom
+  case basket
+  case roll_of_paper
+  case soap
+  case sponge
+  case receipt
+  case nazar_amulet
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public typealias AllCases = [SmartUIKit.Emoji]
+  public static var allCases: [SmartUIKit.Emoji] {
+    get
+  }
+}
+public struct AnimationContainer {
+  public var start: Swift.Double
+  public var end: Swift.Double
+  public var anim: SmartUIKit.SAnimType
+  public var tags: [Swift.String]
+  public var views: [UIKit.UIView]
+  public var completionBlock: (() -> Swift.Void)?
+  public init(anim: SmartUIKit.SAnimType, tags: [Swift.String])
+}
+extension String {
+  public func getAsType<T>(_ t: T.Type) -> T? where T : Swift.Decodable
+}
+extension Encodable {
+  public func stringVal(_ encoding: Swift.String.Encoding = .utf8) -> Swift.String
+}
+public protocol SPosition {
+  func apply(on: UIKit.UIView, superView: UIKit.UIView?)
+}
+public enum SPositions {
+  case abs(row: CoreGraphics.CGFloat, col: CoreGraphics.CGFloat, rows: CoreGraphics.CGFloat, cols: CoreGraphics.CGFloat)
+  case rel(posTag: Swift.String, horRefView: UIKit.UIView, vertRefView: UIKit.UIView, offsetVert: CoreGraphics.CGFloat, offsetHor: CoreGraphics.CGFloat, rows: CoreGraphics.CGFloat, cols: CoreGraphics.CGFloat)
+  case reln(tag: Swift.String, viewTop: UIKit.UIView?, offsetTop: CoreGraphics.CGFloat, viewBottom: UIKit.UIView?, offsetBottom: CoreGraphics.CGFloat, viewLeft: UIKit.UIView?, offsetLeft: CoreGraphics.CGFloat, viewRight: UIKit.UIView?, offsetRight: CoreGraphics.CGFloat)
+  public func apply(on view: UIKit.UIView, superView: UIKit.UIView?)
+}
+public struct SAbsolutePosition : SmartUIKit.SPosition {
+  public init(row: CoreGraphics.CGFloat, col: CoreGraphics.CGFloat, rows: CoreGraphics.CGFloat = -1, cols: CoreGraphics.CGFloat = -1)
+  public func apply(on: UIKit.UIView, superView: UIKit.UIView?)
+}
+public struct SRelativePosition : SmartUIKit.SPosition {
+  public var offsetVert: CoreGraphics.CGFloat
+  public var offsetHor: CoreGraphics.CGFloat
+  public var posTag: Swift.String
+  weak public var horRefView: UIKit.UIView?
+  weak public var vertRefView: UIKit.UIView?
+  public var rows: CoreGraphics.CGFloat
+  public var cols: CoreGraphics.CGFloat
+  public init(posTag: Swift.String = "tbll", horRefView: UIKit.UIView, vertRefView: UIKit.UIView, offsetVert: CoreGraphics.CGFloat = 0, offsetHor: CoreGraphics.CGFloat = 0, rows: CoreGraphics.CGFloat = -1, cols: CoreGraphics.CGFloat = -1)
+  public func apply(on: UIKit.UIView, superView: UIKit.UIView?)
+}
+public class SView {
+  public init(view: UIKit.UIView, position: SmartUIKit.SPositions, style: SmartUIKit.SStyle?, subviews: [SmartUIKit.SView] = [])
+  public func applyStrings(_ strings: [Swift.String])
+  public func place(on superView: UIKit.UIView)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class SAnimationTransitioning : UIKit.UIPercentDrivenInteractiveTransition, UIKit.UIViewControllerAnimatedTransitioning {
+  public var interactive: Swift.Bool
+  public var forDismissal: Swift.Bool
+  public var transitionDuration: Swift.Double
+  @objc public func animateTransition(using context: UIKit.UIViewControllerContextTransitioning)
+  @objc public func animationEnded(_ ended: Swift.Bool)
+  @objc public func transitionDuration(using: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers open class STransitionDelegate : ObjectiveC.NSObject, UIKit.UIViewControllerTransitioningDelegate {
+  public var animatedTransitioning: SmartUIKit.SAnimationTransitioning?
+  public var interactive: Swift.Bool
+  @objc public func animationController(forPresented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc public func animationController(forDismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc public func interactionControllerForPresentation(using: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
+  @objc public func interactionControllerForDismissal(using: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
+  @objc public func presentationController(forPresented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers open class SPresentationController : UIKit.UIPresentationController {
+  @objc override dynamic public func presentationTransitionWillBegin()
+  @objc override dynamic public func presentationTransitionDidEnd(_ ended: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(presentedViewController: UIKit.UIViewController, presenting presentingViewController: UIKit.UIViewController?)
+}
+extension UIViewController {
+  public func makePresentableWithAnimation(trdelegate: SmartUIKit.STransitionDelegate, on presentingVc: UIKit.UIViewController, interactive: Swift.Bool, animationBlock: ((Swift.Bool, UIKit.UIViewControllerContextTransitioning?) -> ())?, animationEndedBlock: (() -> ())?, presentationDidBegin: ((UIKit.UIPresentationController?) -> ())?, presentationDidEnd: ((UIKit.UIPresentationController?) -> ())?)
+}
+@_hasMissingDesignatedInitializers open class JSONSqlite {
+  public static var db: SQLite.Connection?
+  public static func createDB() -> SQLite.Connection?
+  @objc deinit
+}
+public struct CSpace {
+  public init()
+  public init(screenWidth: CoreGraphics.CGFloat, screenHeight: CoreGraphics.CGFloat)
+  public func cgPointDeltatoPointDelta(_ delta: CoreGraphics.CGPoint) -> SmartUIKit.QEPoint
+  public func positionFromFrame(_ frame: CoreGraphics.CGRect) -> (CoreGraphics.CGFloat, CoreGraphics.CGFloat, CoreGraphics.CGFloat, CoreGraphics.CGFloat)
+}
+extension UIImageView {
+  @objc override dynamic public func applyString(string: Swift.String)
+}
+public protocol ImagePickerDelegate : AnyObject {
+  func didSelect(image: UIKit.UIImage?)
+}
+@objc open class ImagePicker : ObjectiveC.NSObject {
+  public init(presentationController: UIKit.UIViewController, delegate: SmartUIKit.ImagePickerDelegate)
+  public func present(from sourceView: UIKit.UIView)
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension ImagePicker : UIKit.UIImagePickerControllerDelegate {
+  @objc dynamic public func imagePickerControllerDidCancel(_ picker: UIKit.UIImagePickerController)
+  @objc dynamic public func imagePickerController(_ picker: UIKit.UIImagePickerController, didFinishPickingMediaWithInfo info: [UIKit.UIImagePickerController.InfoKey : Any])
+}
+extension ImagePicker : UIKit.UINavigationControllerDelegate {
+}
+extension SAnimType {
+  public func attachTo(views: [UIKit.UIView], start: Foundation.TimeInterval, end: Foundation.TimeInterval, superView: UIKit.UIView)
+  public func attachTo(view: UIKit.UIView, start: Foundation.TimeInterval, end: Foundation.TimeInterval, superView: UIKit.UIView)
+  public func attachTo(tags: [Swift.String], start: Foundation.TimeInterval, end: Foundation.TimeInterval, superView: UIKit.UIView)
+  public func attachTo(tag: Swift.String, ind: Swift.Int = 0, start: Foundation.TimeInterval, end: Foundation.TimeInterval, superView: UIKit.UIView, completion: (() -> ())? = nil, animTag: Swift.String? = nil)
+  public func addToView(ec: UIKit.UIView, start: Foundation.TimeInterval, end: Foundation.TimeInterval, superView: UIKit.UIView, completion: (() -> ())? = nil, animTag: Swift.String? = nil)
+  public static func getAnimation(keyPath: Swift.String, repeatCount: Swift.Float = 0.0, values: [Swift.String], keyTimes: [CoreGraphics.CGFloat]?, start: Foundation.TimeInterval, duration: Foundation.TimeInterval, autoreverses: Swift.Bool, path: CoreGraphics.CGPath?, calculationMode: SmartUIKit.QECalculationMode, superView: UIKit.UIView) -> QuartzCore.CAKeyframeAnimation
+  public static func getSpringAnimation(keyPath: Swift.String, fromVal: Swift.String, toVal: Swift.String, duration: Foundation.TimeInterval, repeatCount: Swift.Float, autoReverses: Swift.Bool, superView: UIKit.UIView) -> QuartzCore.CASpringAnimation
+  public func returnCAKeyframeAnimation(superView: UIKit.UIView) -> QuartzCore.CAKeyframeAnimation?
+}
+extension UIView {
+  @objc dynamic public func applyString(string: Swift.String)
+}
+extension UILabel {
+  @objc override dynamic public func applyString(string: Swift.String)
+}
+extension UITextView {
+  @objc override dynamic public func applyString(string: Swift.String)
+}
+extension UIView {
+  public func positionAbs(superView: UIKit.UIView, row: CoreGraphics.CGFloat, col: CoreGraphics.CGFloat, rows: CoreGraphics.CGFloat, cols: CoreGraphics.CGFloat)
+  public func positionRel(superView: UIKit.UIView, positionTag: Swift.String, verticalRef: UIKit.UIView, HorizontalRef: UIKit.UIView, vertOffset: CoreGraphics.CGFloat, horOffset: CoreGraphics.CGFloat, rows: CoreGraphics.CGFloat, cols: CoreGraphics.CGFloat)
+  public func applyKeypath(_ keypath: SmartUIKit.AnimatableProperties, value: Swift.String?)
+}
+extension UIFont {
+  public func withTraits(traits: UIKit.UIFontDescriptor.SymbolicTraits) -> UIKit.UIFont
+  public func bold() -> UIKit.UIFont
+  public func semibold() -> UIKit.UIFont
+  public func italic() -> UIKit.UIFont
+}
+extension SStyle {
+  public func applyBlur()
+  public func getAttributedString(_ mt: Foundation.NSMutableAttributedString) -> Foundation.NSMutableAttributedString
+}
+extension UIView {
+  public func removeAllConstraints()
+}
+public struct CPoint : Swift.Hashable {
+  public init(from decoder: Swift.Decoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: SmartUIKit.CPoint, b: SmartUIKit.CPoint) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public class QEPoint : Swift.Codable {
+  public var row: CoreGraphics.CGFloat
+  public var col: CoreGraphics.CGFloat
+  public init(row: CoreGraphics.CGFloat, col: CoreGraphics.CGFloat)
+  public init(_ row: CoreGraphics.CGFloat, _ col: CoreGraphics.CGFloat)
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers open class CommonStyles {
+  public static func btnStyle() -> SmartUIKit.SStyle
+  public static func txtStyle(for textStyle: UIKit.UIFont.TextStyle = .body, color: UIKit.UIColor = UIColor.systemBlue, bgColor: UIKit.UIColor = UIColor.secondarySystemFill) -> SmartUIKit.SStyle
+  public static func txtStyle1() -> SmartUIKit.SStyle
+  @objc deinit
+}
+public enum LayerSpec {
+  case gradient(colors: [Swift.String], direction: [SmartUIKit.QEPoint], location: [CoreGraphics.CGFloat])
+  case gradientn(colors: [Swift.String], direction: [SmartUIKit.QEPoint], location: [CoreGraphics.CGFloat], type: Swift.String)
+}
+extension UILabel {
+  convenience public init(mTag: Swift.String, superView: UIKit.UIView, string: Swift.String, pos: SmartUIKit.SPositions, font: UIKit.UIFont, textColour: UIKit.UIColor = UIColor.label, bgColour: UIKit.UIColor = UIColor.systemFill, horAlignment: UIKit.NSTextAlignment = .center)
+}
+public enum PathPreset : Swift.String {
+  case parabolaY
+  case circle
+  case straight
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc extension UIFont {
+  @objc public static var superLargeSystem: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var superLargeSystemMedium: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var bodyMedium: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var captionSemibold: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var bodySystem: UIKit.UIFont {
+    @objc get
+  }
+  @objc public static var textFont: UIKit.UIFont {
+    @objc get
+  }
+}
+extension SStyle {
+  public func applyOnView(view: UIKit.UIView)
+  public func applyOnUIImage(img: UIKit.UIImage)
+}
+public enum SEventState : Swift.String {
+  case changed
+  case ended
+  case began
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers open class ViewBucket : ObjectiveC.NSObject {
+  public var touch: UIKit.UITouch? {
+    get
+    set
+  }
+  public var event: UIKit.UIControl.Event?
+  public var uievent: (SmartUIKit.SEventState?, UIKit.UIEvent?)? {
+    get
+    set
+  }
+  public var pressesevent: (SmartUIKit.SEventState?, UIKit.UIPressesEvent?)? {
+    get
+    set
+  }
+  public var string: Swift.String? {
+    get
+    set
+  }
+  public var tapGesture: UIKit.UITapGestureRecognizer? {
+    get
+    set
+  }
+  public var tapGestureAction: ((UIKit.UITapGestureRecognizer?) -> ())?
+  public var swipeGesture: UIKit.UISwipeGestureRecognizer? {
+    get
+    set
+  }
+  public var swipeGestureAction: ((UIKit.UISwipeGestureRecognizer?) -> ())?
+  public var longpressGestureAction: ((UIKit.UILongPressGestureRecognizer?) -> ())?
+  public var longpressGesture: UIKit.UILongPressGestureRecognizer? {
+    get
+    set
+  }
+  public var panGesture: UIKit.UIPanGestureRecognizer? {
+    get
+    set
+  }
+  public var panGestureAction: ((UIKit.UIPanGestureRecognizer?) -> ())?
+  public var pinchGesture: UIKit.UIPinchGestureRecognizer? {
+    get
+    set
+  }
+  public var pinchGestureAction: ((UIKit.UIPinchGestureRecognizer?) -> ())?
+  public var rotationGesture: UIKit.UIRotationGestureRecognizer? {
+    get
+    set
+  }
+  public var rotationGestureAction: ((UIKit.UIRotationGestureRecognizer?) -> ())?
+  public var valueAction: ((Swift.String?) -> ())?
+  public var eventAction: ((UIKit.UIControl, UIKit.UIControl.Event?) -> ())?
+  public var uieventAction: ((SmartUIKit.SEventState?, UIKit.UIEvent?) -> ())?
+  public var presseventAction: ((SmartUIKit.SEventState?, UIKit.UIPressesEvent?) -> ())?
+  public var touchAction: ((UIKit.UITouch?) -> ())?
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension UIView {
+  @objc dynamic public var bucket: SmartUIKit.ViewBucket? {
+    @objc get
+    @objc set
+  }
+  convenience public init(mTag: Swift.String?, pos: SmartUIKit.SPositions, superView: UIKit.UIView?)
+  convenience public init(mTag: Swift.String?)
+  public func initializeWithTag(mTag: Swift.String?)
+  public func enableTap(_ handler: ((UIKit.UITapGestureRecognizer?) -> ())?)
+  public func enablePinch(_ handler: ((UIKit.UIPinchGestureRecognizer?) -> ())?)
+  public func enablePan(_ handler: ((UIKit.UIPanGestureRecognizer?) -> ())?)
+  public func enableSwipe(_ handler: ((UIKit.UISwipeGestureRecognizer?) -> ())?)
+  public func enableRotation(_ handler: ((UIKit.UIRotationGestureRecognizer?) -> ())?)
+  public func onEvent(for event: UIKit.UIControl.Event, _ handler: ((UIKit.UIControl, UIKit.UIControl.Event?) -> ())?)
+  public func onUIEvent(_ handler: ((SmartUIKit.SEventState?, UIKit.UIEvent?) -> ())?)
+  public func onPressesEvent(_ handler: ((SmartUIKit.SEventState?, UIKit.UIPressesEvent?) -> ())?)
+  @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc override dynamic public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc override dynamic open func pressesBegan(_ presses: Swift.Set<UIKit.UIPress>, with event: UIKit.UIPressesEvent?)
+  @objc override dynamic open func pressesEnded(_ presses: Swift.Set<UIKit.UIPress>, with event: UIKit.UIPressesEvent?)
+}
+public enum AnimatableProperties : Swift.String {
+  case anchorPoint
+  case backgroundColor
+  case backgroundFilters
+  case borderColor
+  case borderWidth
+  case bounds
+  case compositingFilter
+  case contents
+  case contentsRect
+  case cornerRadius
+  case doubleSided
+  case filters
+  case frame
+  case hidden
+  case mask
+  case masksToBounds
+  case opacity
+  case position
+  case shadowColor
+  case shadowOffset
+  case shadowOpacity
+  case shadowPath
+  case shadowRadius
+  case sublayers
+  case sublayerTransform
+  case zPosition
+  case strokeEnd
+  case tr_rotationx
+  case tr_rotationy
+  case tr_rotationz
+  case tr_rotation
+  case tr_translationx
+  case tr_translationy
+  case tr_translationz
+  case tr_translation
+  case tr_scalex
+  case tr_scaley
+  case tr_scalez
+  case tr_scale
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+}
+extension UIColor {
+  convenience public init(hex: Swift.String)
+}
+public func rgbaToUIColor(red: CoreGraphics.CGFloat, green: CoreGraphics.CGFloat, blue: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat) -> UIKit.UIColor
+public func UIColorFromRGB(rgbValue: Swift.UInt) -> UIKit.UIColor
+public func stringFromDate(date: Foundation.NSDate, format: Swift.String) -> Swift.String
+public func dateFromString(date: Swift.String, format: Swift.String) -> Foundation.Date
+public func randomStringWithLength(len: Swift.Int) -> Foundation.NSString
+public func timeAgoSinceDate(date: Foundation.Date, numericDates: Swift.Bool) -> Swift.String
+open class Section : Swift.Hashable {
+  public var titles: [Swift.String]
+  public var footers: [Swift.String]?
+  public var items: [[Swift.String]]
+  public init(titles: [Swift.String], items: [[Swift.String]], footers: [Swift.String]? = nil)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (lhs: SmartUIKit.Section, rhs: SmartUIKit.Section) -> Swift.Bool
+  @objc deinit
+  open var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers open class SCollectionViewCell : UIKit.UICollectionViewCell {
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers open class SSectionHeaderReusableView : UIKit.UICollectionReusableView {
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+open class SCollectionViewController<Cell, Header> : UIKit.UICollectionViewController, UIKit.UISearchResultsUpdating where Cell : SmartUIKit.SCollectionViewCell, Header : SmartUIKit.SSectionHeaderReusableView {
+  public var sections: [SmartUIKit.Section]
+  public var reusableIdentifier: Swift.String
+  public var filterSections: ((Swift.String?) -> [SmartUIKit.Section])?
+  public var onSelect: (([Swift.String]) -> ())?
+  public var searchText: Swift.String
+  public func applySnapshot(animatingDifferences: Swift.Bool = true)
+  public init(sections: [SmartUIKit.Section], itemHeight: CoreGraphics.CGFloat, headerHeight: CoreGraphics.CGFloat, edgeInsetTop: CoreGraphics.CGFloat = 10, edgeInsetLeading: CoreGraphics.CGFloat = 10, edgeInsetBottom: CoreGraphics.CGFloat = 10, edgeInsetTrailing: CoreGraphics.CGFloat = 10, interGroupSpacing: CoreGraphics.CGFloat = 10, searchText: Swift.String = "Search", filterSections: ((Swift.String?) -> [SmartUIKit.Section])? = nil, onSelect: (([Swift.String]) -> ())? = nil)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc override dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+  @objc override dynamic open func viewDidLoad()
+  @objc override dynamic open func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @objc public func updateSearchResults(for searchController: UIKit.UISearchController)
+  @objc deinit
+  @objc override dynamic public init(collectionViewLayout layout: UIKit.UICollectionViewLayout)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+}
+extension SCollectionViewController {
+  public static func configureLayout(itemHeight: CoreGraphics.CGFloat, headerHeight: CoreGraphics.CGFloat, edgeInsetTop: CoreGraphics.CGFloat = 10, edgeInsetLeading: CoreGraphics.CGFloat = 10, edgeInsetBottom: CoreGraphics.CGFloat = 10, edgeInsetTrailing: CoreGraphics.CGFloat = 10, interGroupSpacing: CoreGraphics.CGFloat = 10, variableHeight: Swift.Bool = false) -> UIKit.UICollectionViewLayout
+}
+extension UIButton {
+  convenience public init(mTag: Swift.String, superView: UIKit.UIView, string: Swift.String, pos: SmartUIKit.SPositions, font: UIKit.UIFont = UIFont.bodyMedium, textColour: UIKit.UIColor = UIColor.white, bgColour: UIKit.UIColor = UIColor.systemBlue, cornerRadius: CoreGraphics.CGFloat = 8)
+}
+public enum SpringAnimationPreset : Swift.String {
+  case SlideLeft
+  case SlideRight
+  case SlideDown
+  case SlideUp
+  case SqueezeLeft
+  case SqueezeRight
+  case SqueezeDown
+  case SqueezeUp
+  case FadeIn
+  case FadeOut
+  case FadeOutIn
+  case FadeInLeft
+  case FadeInRight
+  case FadeInDown
+  case FadeInUp
+  case ZoomIn
+  case ZoomOut
+  case Fall
+  case Shake
+  case Pop
+  case FlipX
+  case FlipY
+  case Morph
+  case Squeeze
+  case Flash
+  case Wobble
+  case Swing
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SAnimationCurve : Swift.String {
+  case EaseIn
+  case EaseOut
+  case EaseInOut
+  case Linear
+  case Spring
+  case EaseInSine
+  case EaseOutSine
+  case EaseInOutSine
+  case EaseInQuad
+  case EaseOutQuad
+  case EaseInOutQuad
+  case EaseInCubic
+  case EaseOutCubic
+  case EaseInOutCubic
+  case EaseInQuart
+  case EaseOutQuart
+  case EaseInOutQuart
+  case EaseInQuint
+  case EaseOutQuint
+  case EaseInOutQuint
+  case EaseInExpo
+  case EaseOutExpo
+  case EaseInOutExpo
+  case EaseInCirc
+  case EaseOutCirc
+  case EaseInOutCirc
+  case EaseInBack
+  case EaseOutBack
+  case EaseInOutBack
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public typealias SColor = UIKit.UIColor
+public struct SStyle {
+  public init(bgImage: Swift.String? = nil, bgColor: Swift.String? = nil, bgColour: SmartUIKit.SColor? = nil, borderColor: Swift.String? = nil, borderColour: UIKit.UIColor? = nil, borderWidth: CoreGraphics.CGFloat? = nil, scale: Swift.Float? = nil, color: Swift.String? = nil, colour: SmartUIKit.SColor? = nil, fillColor: Swift.String? = nil, fillColour: SmartUIKit.SColor? = nil, lineDashPattern: [Swift.Int]? = nil, fontSize: CoreGraphics.CGFloat? = nil, fontWeight: Swift.String? = nil, fontName: Swift.String? = nil, font: UIKit.UIFont? = nil, cornerRadius: CoreGraphics.CGFloat? = nil, textAlignment: Swift.String? = nil, attributes: [Swift.String : Swift.String]? = nil, blur: Swift.Bool? = nil, lineWidth: CoreGraphics.CGFloat? = nil, gradients: [SmartUIKit.LayerSpec]? = nil)
+  public var bgImage: Swift.String?
+  public var bgColor: Swift.String? {
+    get
+    set
+  }
+  public var bgColour: SmartUIKit.SColor?
+  public var borderColor: Swift.String? {
+    get
+    set
+  }
+  public var borderColour: UIKit.UIColor?
+  public var borderWidth: CoreGraphics.CGFloat?
+  public var scale: Swift.Float?
+  public var color: Swift.String? {
+    get
+    set
+  }
+  public var colour: SmartUIKit.SColor?
+  public var fillColor: Swift.String?
+  public var fillColour: SmartUIKit.SColor?
+  public var lineDashPattern: [Swift.Int]?
+  public var fontSize: CoreGraphics.CGFloat?
+  public var fontWeight: Swift.String?
+  public var fontName: Swift.String?
+  public var font: UIKit.UIFont?
+  public var cornerRadius: CoreGraphics.CGFloat?
+  public var textAlignment: Swift.String?
+  public var attributes: [Swift.String : Swift.String]?
+  public var blur: Swift.Bool?
+  public var lineWidth: CoreGraphics.CGFloat?
+  public var gradients: [SmartUIKit.LayerSpec]?
+  public var innerInsets: UIKit.UIEdgeInsets?
+  public var externalInsets: UIKit.UIEdgeInsets?
+  public init()
+}
+@objc open class SCollectionView : UIKit.UICollectionView, UIKit.UISearchResultsUpdating {
+  public var sections: [SmartUIKit.Section]
+  public var filterSections: ((Swift.String?) -> [SmartUIKit.Section])?
+  public init(sections: [SmartUIKit.Section], cellTypes: [Swift.String : SmartUIKit.SCollectionViewCell.Type], headerCellTypes: [Swift.String : SmartUIKit.SSectionHeaderReusableView.Type], reuseIdentifierFn: ((Foundation.IndexPath) -> (Swift.String?))?, reuseIdentifierFnHeader: ((Foundation.IndexPath) -> (Swift.String?))?, layout: @escaping (Swift.Int, UIKit.NSCollectionLayoutEnvironment) -> UIKit.NSCollectionLayoutSection?, filterSections: ((Swift.String?) -> [SmartUIKit.Section])? = nil, onSelect: ((UIKit.UICollectionView, Foundation.IndexPath) -> ())?, canEdit: ((UIKit.UICollectionView, Foundation.IndexPath) -> (Swift.Bool))?)
+  public func updateSections(with sections: [SmartUIKit.Section])
+  public func applySnapshot(animatingDifferences: Swift.Bool = true)
+  @objc public func updateSearchResults(for searchController: UIKit.UISearchController)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect, collectionViewLayout layout: UIKit.UICollectionViewLayout)
+}
+extension String {
+  public var emojiUnescapedString: Swift.String {
+    get
+  }
+  public var emojiEscapedString: Swift.String {
+    get
+  }
+}
+public enum SAnimType {
+  case shake
+  case mvToView(view: UIKit.UIView, duration: Swift.Double)
+  case path(ip: SmartUIKit.QEPoint, fp: SmartUIKit.QEPoint, t: CoreGraphics.CGFloat, pathPreset: SmartUIKit.PathPreset, showPath: Swift.Bool)
+  case pathTo(fp: SmartUIKit.QEPoint, t: CoreGraphics.CGFloat, pathPreset: SmartUIKit.PathPreset, showPath: Swift.Bool)
+  case pathToRel(delta: SmartUIKit.QEPoint, t: CoreGraphics.CGFloat, pathPreset: SmartUIKit.PathPreset, showPath: Swift.Bool)
+  case pathToWithBoard(fp: SmartUIKit.QEPoint, boardTag: Swift.String, t: CoreGraphics.CGFloat, pathPreset: SmartUIKit.PathPreset, showPath: Swift.Bool)
+  case keypath(keyPath: SmartUIKit.AnimatableProperties, values: [Swift.String], keyTimes: [CoreGraphics.CGFloat], start: Foundation.TimeInterval, duration: Foundation.TimeInterval, repeatCount: Swift.Float, calculationMode: SmartUIKit.QECalculationMode, autoReverses: Swift.Bool)
+  case skeypath(keyPath: SmartUIKit.AnimatableProperties, fromVal: Swift.String, toVal: Swift.String, duration: Foundation.TimeInterval, repeatCount: Swift.Float, autoReverses: Swift.Bool)
+  case spring(anim: Swift.String)
+  case springn(anim: SmartUIKit.SpringAnimationPreset)
+  case springP(keyPath: Swift.String, fromVal: Swift.String?, toVal: Swift.String, duration: Swift.Double, repeatCount: Swift.Float, autoReverses: Swift.Bool, damping: CoreGraphics.CGFloat, stiffness: CoreGraphics.CGFloat, velocity: CoreGraphics.CGFloat, mass: CoreGraphics.CGFloat)
+  case rotate(angle: CoreGraphics.CGFloat)
+  case moveTo(pt: SmartUIKit.QEPoint, duration: Swift.Double)
+  case moveBy(pt: SmartUIKit.QEPoint, duration: Swift.Double)
+  case rotateTo(angle: Swift.Double, duration: Swift.Double)
+  case rotateBy(angle: Swift.Double, duration: Swift.Double)
+  case scaleTo(scale: Swift.Double, duration: Swift.Double)
+  case scaleBy(scale: Swift.Double, duration: Swift.Double)
+  case fadeTo(alpha: Swift.Double, duration: Swift.Double)
+  case fadeBy(alpha: Swift.Double, duration: Swift.Double)
+}
+@objc @_inheritsConvenienceInitializers open class STableView : UIKit.UITableView {
+  public var reuseIdentifier: Swift.String
+  convenience public init(sections: [SmartUIKit.Section], cellTypes: [Swift.String : SmartUIKit.STableViewCell.Type], reuseIdentifierFn: @escaping ((Foundation.IndexPath) -> Swift.String?), isRowEditable: ((Foundation.IndexPath) -> Swift.Bool)?, canMoveRowAt: ((Foundation.IndexPath) -> Swift.Bool)?, cellConfigure: ((SmartUIKit.STableViewCell, Foundation.IndexPath) -> ())?, didSelectRow: ((UIKit.UITableView?, Foundation.IndexPath) -> ())?, heightForRow: ((UIKit.UITableView?, Foundation.IndexPath) -> (CoreGraphics.CGFloat))?, headerViews: ((UIKit.UITableView, Swift.Int) -> (UIKit.UIView?))? = nil, footerViews: ((UIKit.UITableView, Swift.Int) -> (UIKit.UIView?))? = nil, accessoryBtnHandler: ((UIKit.UITableView, Foundation.IndexPath) -> ())? = nil)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect, style: UIKit.UITableView.Style)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public enum QECalculationMode : Swift.String {
+  case paced
+  case cubicPaced
+  case linear
+  case cubic
+  case discrete
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers open class STableViewCell : UIKit.UITableViewCell {
+  public func applyStrings(_ strings: [Swift.String])
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc open class STableViewDataSource : ObjectiveC.NSObject, UIKit.UITableViewDataSource {
+  public var sections: [SmartUIKit.Section] {
+    get
+    set
+  }
+  public init(sections: [SmartUIKit.Section], isRowEditable: ((Foundation.IndexPath) -> Swift.Bool)?, canMoveRowAt: ((Foundation.IndexPath) -> Swift.Bool)?, cellConfigure: ((SmartUIKit.STableViewCell, Foundation.IndexPath) -> ())?, reuseIdentifierFn: ((Foundation.IndexPath) -> Swift.String?)?)
+  @objc public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @objc public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @objc public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @objc public func tableView(_ tableView: UIKit.UITableView, titleForHeaderInSection section: Swift.Int) -> Swift.String?
+  @objc public func tableView(_ tableView: UIKit.UITableView, titleForFooterInSection section: Swift.Int) -> Swift.String?
+  @objc public func tableView(_ tableView: UIKit.UITableView, commit: UIKit.UITableViewCell.EditingStyle, forRowAt indexPath: Foundation.IndexPath)
+  @objc public func tableView(_ tableView: UIKit.UITableView, canEditRowAt indexPath: Foundation.IndexPath) -> Swift.Bool
+  public func tableView(_tableView: UIKit.UITableView, canMoveRowAt indexPath: Foundation.IndexPath) -> Swift.Bool
+  @objc public func tableView(_ tableView: UIKit.UITableView, moveRowAt indexPath: Foundation.IndexPath, to: Foundation.IndexPath)
+  @objc public func sectionIndexTitles(for: UIKit.UITableView) -> [Swift.String]?
+  @objc public func tableView(_ tableView: UIKit.UITableView, sectionForSectionIndexTitle title: Swift.String, at index: Swift.Int) -> Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol AutoDecodable : Swift.Decodable {
+}
+public protocol AutoEncodable : Swift.Encodable {
+}
+extension LayerSpec {
+  public func returnGradientLayer(_ lr: QuartzCore.CALayer, inset: [CoreGraphics.CGFloat] = [0.0,0.0,0.0,0.0]) -> QuartzCore.CAGradientLayer?
+}
+@_hasMissingDesignatedInitializers open class SViewStore {
+  public static func addView(view: UIKit.UIView, tag: Swift.String)
+  public static func getView(tag: Swift.String) -> UIKit.UIView?
+  public static func getViews(tag: Swift.String) -> [UIKit.UIView?]
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class QELabel : UIKit.UILabel {
+  @objc override dynamic public var text: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public var textAlignment: UIKit.NSTextAlignment {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public var font: UIKit.UIFont! {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public var textColor: UIKit.UIColor! {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public var lineBreakMode: UIKit.NSLineBreakMode {
+    @objc get
+    @objc set
+  }
+  public init(text: Swift.String? = nil, textColor: UIKit.UIColor? = nil, font: UIKit.UIFont? = nil, numberOfLines: Swift.Int = 1, textAlignment: UIKit.NSTextAlignment = .left)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+}
+extension SmartUIKit.Emoji : Swift.Equatable {}
+extension SmartUIKit.Emoji : Swift.Hashable {}
+extension SmartUIKit.Emoji : Swift.RawRepresentable {}
+extension SmartUIKit.CPoint : Swift.Encodable {}
+extension SmartUIKit.CPoint : Swift.Decodable {}
+extension SmartUIKit.PathPreset : Swift.Encodable {}
+extension SmartUIKit.PathPreset : Swift.Decodable {}
+extension SmartUIKit.PathPreset : Swift.Equatable {}
+extension SmartUIKit.PathPreset : Swift.Hashable {}
+extension SmartUIKit.PathPreset : Swift.RawRepresentable {}
+extension SmartUIKit.SEventState : Swift.Equatable {}
+extension SmartUIKit.SEventState : Swift.Hashable {}
+extension SmartUIKit.SEventState : Swift.RawRepresentable {}
+extension SmartUIKit.AnimatableProperties : Swift.Equatable {}
+extension SmartUIKit.AnimatableProperties : Swift.Hashable {}
+extension SmartUIKit.AnimatableProperties : Swift.RawRepresentable {}
+extension SmartUIKit.SpringAnimationPreset : Swift.Equatable {}
+extension SmartUIKit.SpringAnimationPreset : Swift.Hashable {}
+extension SmartUIKit.SpringAnimationPreset : Swift.RawRepresentable {}
+extension SmartUIKit.SAnimationCurve : Swift.Encodable {}
+extension SmartUIKit.SAnimationCurve : Swift.Decodable {}
+extension SmartUIKit.SAnimationCurve : Swift.Equatable {}
+extension SmartUIKit.SAnimationCurve : Swift.Hashable {}
+extension SmartUIKit.SAnimationCurve : Swift.RawRepresentable {}
+extension SmartUIKit.QECalculationMode : Swift.Encodable {}
+extension SmartUIKit.QECalculationMode : Swift.Decodable {}
+extension SmartUIKit.QECalculationMode : Swift.Equatable {}
+extension SmartUIKit.QECalculationMode : Swift.Hashable {}
+extension SmartUIKit.QECalculationMode : Swift.RawRepresentable {}
